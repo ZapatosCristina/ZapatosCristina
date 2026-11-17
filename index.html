@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zapatos Cristina · Zapatería en el centro de Cádiz</title>
+<meta name="description" content="Zapatería en el centro de Cádiz (C/ Compañía, 2). Calzado cómodo de señora y caballero, barefoot y zapatillas de casa: Pikolinos, Fluchos, Callaghan, Carmela, Mustang y más. Consulta tallas por WhatsApp.">
+<meta name="theme-color" content="#D7231A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zapatos Cristina · Zapatería en el centro de Cádiz">
+<meta property="og:description" content="Calzado cómodo de señora y caballero en C/ Compañía, 2. Pikolinos, Fluchos, Callaghan, Carmela y más.">
+<meta property="og:image" content="img/tienda/s-tienda.jpg">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23D7231A'/%3E%3Cpath d='M10 40c6 0 9-10 18-10 8 0 11 5 18 5 4 0 8 2 8 6v3H10z' fill='%23fff'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ShoeStore","name":"Zapatos Cristina",
+"description":"Zapatería en el centro de Cádiz. Calzado cómodo de señora y caballero.",
+"image":"img/tienda/s-tienda.jpg","telephone":"+34856367227","email":"crisporfirio70@gmail.com",
+"address":{"@type":"PostalAddress","streetAddress":"Calle Compañía, 2","postalCode":"11005","addressLocality":"Cádiz","addressRegion":"Cádiz","addressCountry":"ES"},
+"openingHoursSpecification":[
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"10:30","closes":"14:00"},
+{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"17:30","closes":"20:30"},
+{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:30","closes":"14:00"}],
+"brand":["Pikolinos","Fluchos","Callaghan","Carmela","Mustang","Art","24 Hrs","Gioseppo","Chika10","Refresh","El Naturalista","Imac"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: la imagen de la tienda — rojo del toldo, blanco de las estanterías, mayúsculas gruesas del rótulo. Barra, cabecera roja, portada con foto real, categorías, opiniones, destacados, marcas, visítanos. */
+:root{
+  --bg:#FFFFFF; --soft:#F4F2F1; --card:#FFFFFF; --ink:#1B1716; --muted:#605856; --line:#E4DFDD;
+  --red:#D7231A; --red-deep:#A8170F; --on-red:#FFFFFF; --wa:#1F8A4C;
+  --f-display:"Montserrat", "Arial Black", Arial, sans-serif;
+  --f-body:"Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#141111; --soft:#1D1817; --card:#221C1B; --ink:#F2ECEA; --muted:#B3A9A6; --line:#352C2A;
+  --red:#D7231A; --red-deep:#7A120C; --on-red:#FFFFFF; --wa:#24965A; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#141111; --soft:#1D1817; --card:#221C1B; --ink:#F2ECEA; --muted:#B3A9A6; --line:#352C2A;
+  --red:#D7231A; --red-deep:#7A120C; --on-red:#FFFFFF; --wa:#24965A; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:19px;line-height:1.55}
+.in{max-width:1180px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+a{color:var(--red)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+.eyebrow{font-family:var(--f-display);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 8px}
+section{padding-block:clamp(44px,7vw,80px)}
+.head{margin-bottom:28px}
+img{display:block;max-width:100%}
+
+/* barra fina */
+.strip{background:var(--red-deep);color:#fff;font-size:.92rem}
+.strip .in{display:flex;justify-content:center;gap:8px 28px;flex-wrap:wrap;padding-block:9px;text-align:center}
+.strip b{font-weight:700}
+
+/* cabecera roja como el toldo */
+header.main{background:var(--red);color:var(--on-red)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+.menubar{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:4;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.menubar .in{display:flex;justify-content:center;gap:4px 40px;overflow-x:auto;scrollbar-width:none}
+.menubar .in::-webkit-scrollbar{display:none}
+.menubar a{flex:none;white-space:nowrap;color:var(--ink);text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:1.02rem;padding:16px 2px 13px;border-bottom:3px solid transparent}
+.menubar a:hover,.menubar a:focus-visible{border-bottom-color:var(--red);color:var(--red)}
+@media (max-width:760px){ .menubar .in{justify-content:flex-start;gap:4px 24px} .menubar a{font-size:.98rem} }
+header.main .in{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;padding-block:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.logo svg{width:46px;height:30px;flex:none;stroke:#fff;fill:none;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
+.logo b{font-family:var(--f-display);font-weight:800;font-size:1.35rem;letter-spacing:.02em;line-height:1;display:block}
+.logo small{display:block;font-family:var(--f-display);font-weight:600;font-size:.68rem;letter-spacing:.16em;margin-top:5px;opacity:.9}
+nav.menu{display:flex;gap:4px 22px;flex-wrap:wrap}
+nav.menu a{color:#fff;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 0;border-bottom:2px solid transparent}
+nav.menu a:hover{border-color:#fff}
+
+/* botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;min-height:54px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:1.05rem;cursor:pointer}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-red{background:var(--red);color:#fff}
+.btn-white{background:#fff;color:var(--red-deep)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn:hover{filter:brightness(1.07)}
+svg.wa{width:22px;height:22px;fill:currentColor;flex:none}
+
+/* huecos de foto pendientes */
+.ph{background:repeating-linear-gradient(135deg, transparent 0 14px, color-mix(in srgb, var(--line) 80%, transparent) 14px 15px), var(--soft);
+  display:flex;align-items:flex-end;padding:12px;max-width:100%;position:relative}
+.ph span.t{font-size:.8rem;color:var(--muted);background:var(--card);padding:4px 8px;border-radius:3px}
+
+/* portada */
+.hero{display:grid;grid-template-columns:1fr 1fr;background:var(--red);color:#fff;border-radius:0 0 10px 10px;overflow:hidden}
+.hero .txt{padding:clamp(28px,5vw,64px);display:flex;flex-direction:column;justify-content:center;gap:18px;min-width:0}
+.hero .tag{font-family:var(--f-display);font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;opacity:.9}
+.hero h1{font-size:clamp(2.2rem,5.4vw,3.9rem);font-weight:800;text-transform:uppercase;letter-spacing:-.005em}
+.hero p{margin:0;font-size:1.15rem;max-width:32ch}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.hero figure{margin:0;min-height:100%;min-width:0}
+.hero figure img{width:100%;height:100%;object-fit:cover;min-height:420px}
+
+/* categorías */
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cat{position:relative;display:block;text-decoration:none;color:#fff;border-radius:10px;overflow:hidden;aspect-ratio:16/10;max-width:100%;background:var(--soft)}
+.cat img{width:100%;height:100%;object-fit:cover}
+.cat .ph{height:100%}
+.cat .lbl{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:var(--red)}
+.cat h3{font-size:1.5rem;font-weight:800;text-transform:uppercase}
+.cat .go{font-weight:700}
+
+/* opiniones */
+.gend-sec{padding-top:28px}
+.gend{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.gtile{position:relative;display:block;border-radius:10px;overflow:hidden;aspect-ratio:4/5;color:#fff;text-decoration:none;background:#2a1d1a}
+.gtile img{width:100%;height:100%;object-fit:cover}
+.gtile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,10,8,0) 45%,rgba(24,10,8,.75) 100%)}
+.gtxt{position:absolute;left:0;right:0;bottom:0;z-index:1;display:flex;flex-direction:column;align-items:center;gap:14px;padding:28px 20px 34px;text-align:center}
+.gtxt h2{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.06em;line-height:1;color:#fff;margin:0}
+.gbtn{display:inline-block;background:#fff;color:#A8170F;font-weight:800;padding:12px 26px;border-radius:999px;font-size:1.05rem}
+.gtile:hover .gbtn{background:var(--red);color:#fff}
+@media (max-width:600px){ .gend{grid-template-columns:1fr;gap:14px} .gtile{aspect-ratio:1/1} .gtile img{object-position:center 30%} }
+.legal .in{max-width:780px}
+.legal h2{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.5rem;margin:34px 0 12px}
+.legal p,.legal li{line-height:1.6;margin:0 0 10px}
+.legal ul{padding-left:20px;margin:0 0 14px}
+.legal .upd{color:var(--muted);font-size:.9rem;margin-top:24px}
+.copy a{color:inherit}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:200;background:#222;color:#fff;padding:14px 22px;border-radius:999px;font-weight:700;font-size:1.05rem;box-shadow:0 6px 20px rgba(0,0,0,.25);width:max-content;max-width:calc(100% - 32px);text-align:center}
+.rev{background:var(--soft)}
+.rev .in{display:grid;grid-template-columns:auto 1fr;gap:28px 48px;align-items:center}
+.rev .score b{font-family:var(--f-display);font-weight:800;font-size:3.6rem;line-height:1;display:block}
+.stars{color:var(--red);letter-spacing:3px;font-size:1.3rem}
+.rev .score span{color:var(--muted);font-size:.95rem}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.quotes figure{margin:0;padding:18px;background:var(--card);border-radius:8px;min-width:0;display:flex;flex-direction:column;gap:10px;border-top:4px solid var(--red)}
+.quotes blockquote{margin:0}
+.quotes figcaption{font-size:.85rem;color:var(--muted);margin-top:auto}
+
+/* colección */
+.piko-head{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:clamp(20px,4vw,48px);align-items:center}
+.piko-head > div{min-width:0}
+.expo{margin:0;border-radius:10px;overflow:hidden;max-width:100%}
+.expo img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center top}
+@media (max-width:680px){ .piko-head{grid-template-columns:1fr} .expo img{aspect-ratio:4/3;object-position:center 20%} }
+.intro{max-width:60ch;color:var(--muted);margin:10px 0 0}
+.jump{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 8px}
+.group{display:flex;align-items:baseline;gap:12px;font-size:1.5rem;font-weight:800;text-transform:uppercase;margin:44px 0 18px;padding-bottom:10px;border-bottom:3px solid var(--red);scroll-margin-top:110px}
+.group small{font-family:var(--f-body);font-weight:400;font-size:1rem;text-transform:none;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prod{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.prod .pic{position:relative;background:#fff;aspect-ratio:1/1;max-width:100%}
+.prod .pic img{width:100%;height:100%;object-fit:contain;padding:8px}
+.prod .badges{position:absolute;top:12px;left:12px;display:flex;gap:6px;align-items:center}
+.prod .badge{background:var(--red);color:#fff;font-family:var(--f-display);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:3px}
+.prod .sample{position:absolute;bottom:10px;right:10px;background:rgba(27,23,22,.75);color:#fff;font-size:.78rem;padding:3px 8px;border-radius:3px}
+.prod .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.prod .brand{font-family:var(--f-display);font-weight:700;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.prod h3{font-family:var(--f-display);font-weight:800;font-size:1.3rem;text-transform:uppercase}
+.prod .type{margin:-4px 0 0;font-weight:600}
+.prod ul{margin:0;padding-left:1.1em;color:var(--muted);font-size:.95rem}
+.prod .row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.95rem}
+.prod .row > b{font-weight:600;margin-right:2px}
+.chip{display:inline-block;padding:3px 10px;border:1.5px solid var(--line);border-radius:999px;font-size:.9rem;font-variant-numeric:tabular-nums}
+.chip.size{min-width:2.4em;text-align:center;font-weight:600}
+.prod .price{font-family:var(--f-display);font-weight:800;font-size:1.45rem;color:var(--red);margin:0;font-variant-numeric:tabular-nums}
+.prod .btn{margin-top:auto;width:100%;font-size:1rem;min-height:52px;padding:12px 16px}
+.example{font-size:.9rem;color:var(--muted);margin-top:24px}
+.cnav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.cbtn{min-height:48px;min-width:48px;padding:8px 14px;border:2px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+.cbtn:hover{background:var(--soft)}
+.cname{flex:1;min-width:0;text-align:left;font-size:.95rem;line-height:1.25}
+.cname small{display:block;font-size:.85rem;color:var(--muted)}
+.cnav .cbtn{white-space:nowrap;padding:8px 14px}
+.cone{margin:0;font-size:.95rem}
+.prod .ref{display:inline-block;margin-left:6px;font-weight:400;font-size:.85rem;color:var(--muted)}
+.prod .ncol{background:var(--ink);color:var(--bg);font-size:.78rem;font-weight:700;padding:5px 10px;border-radius:3px}
+.empty{grid-column:1/-1;color:var(--muted);margin:0}
+.bfilter{display:flex;flex-wrap:wrap;gap:8px}
+.bchip{min-height:46px;padding:8px 18px;border:2px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
+.bchip.on{background:var(--red);border-color:var(--red);color:#fff}
+.bgroup{margin-bottom:34px}
+.bhead{display:flex;align-items:baseline;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em;margin:0 0 14px;padding-left:12px;border-left:4px solid var(--red)}
+.bhead small{font-family:var(--f-body);font-weight:400;font-size:.92rem;text-transform:none;letter-spacing:0;color:var(--muted)}
+.thumbs{display:flex;gap:8px;padding:10px 12px 0;background:#fff}
+.thumb{flex:1;max-width:72px;aspect-ratio:1/1;padding:0;border:2px solid var(--line);border-radius:6px;background:#fff;cursor:pointer;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:contain}
+.thumb.on{border-color:var(--red)}
+.cat img.shoe{object-fit:contain;background:#fff;padding:12px 12px 64px}
+
+/* marcas */
+.brands{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:0;margin:0}
+.brands li{list-style:none;font-family:var(--f-display);font-weight:700;font-size:clamp(1rem,2vw,1.25rem);letter-spacing:.04em;text-transform:uppercase;padding:14px 24px;border:2px solid var(--line);border-radius:6px;background:var(--card)}
+
+.bgal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.bgal figure{margin:0;border-radius:10px;overflow:hidden;background:var(--card);border:1px solid var(--line);min-width:0}
+.bgal img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.bgal figcaption{padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.bgal figcaption b{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.05rem}
+.bgal figcaption span{color:var(--muted);font-size:.92rem}
+.brands{justify-content:flex-start}
+@media (max-width:900px){ .bgal{grid-template-columns:1fr 1fr} }
+
+/* ventajas */
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:32px}
+.perk{display:flex;gap:14px;align-items:flex-start;min-width:0}
+.perk svg{width:34px;height:34px;flex:none;stroke:var(--red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.perk b{display:block;font-size:1.05rem}
+.perk span{color:var(--muted);font-size:.95rem}
+
+/* visítanos */
+.visit{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,5vw,56px);align-items:center}
+.visit > div,.visit > figure{min-width:0}
+.visit figure{margin:0}
+.visit figure img{border-radius:10px;width:100%;aspect-ratio:4/5;object-fit:cover}
+table.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;margin:18px 0 22px}
+.hours td{padding:12px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:600}
+.hours tr.closed td:last-child{color:var(--muted);font-weight:400}
+.big{font-family:var(--f-display);font-size:1.7rem;font-weight:800;text-transform:uppercase;margin:0}
+.visit p{margin:0 0 4px}
+.visit .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* pie */
+footer{background:var(--red);color:#fff;padding-block:40px 110px;font-size:.95rem}
+footer .in{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+footer h3{font-size:.95rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+footer p{margin:0 0 4px}
+footer a{color:#fff}
+footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-top:18px;font-size:.85rem;opacity:.9}
+
+/* WhatsApp flotante */
+.float-wa{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));
+  background:var(--wa);color:#fff;border-radius:999px;padding:15px 22px;font-size:1.05rem;font-weight:700;text-decoration:none;
+  box-shadow:0 6px 20px rgba(0,0,0,.22);display:flex;gap:8px;align-items:center;z-index:6}
+
+@media (max-width:520px){ .grid,.cats{grid-template-columns:1fr !important} }
+@media (max-width:900px){ .cats{grid-template-columns:1fr 1fr} .grid{grid-template-columns:1fr 1fr} .perks{grid-template-columns:1fr 1fr} .quotes{grid-template-columns:1fr} .rev .in{grid-template-columns:1fr} }
+@media (max-width:680px){
+  .visit,.perks{grid-template-columns:1fr}
+  footer .in{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){ .btn{transition:filter .15s} .cat img{transition:transform .3s} .cat:hover img{transform:scale(1.03)} }
+
+/* mensajes de la barra superior */
+.strip .in{justify-content:center}
+.smsg{display:inline-block;font-weight:600;letter-spacing:.02em;transition:opacity .35s, transform .35s}
+.smsg.out{opacity:0;transform:translateY(-4px)}
+
+/* cabecera: redes y cómo llegar */
+.hright{display:flex;align-items:center;gap:10px}
+.soc{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;color:#fff;border:2px solid rgba(255,255,255,.55)}
+.soc:hover{background:rgba(255,255,255,.15)}
+.soc svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
+.hmaps{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;background:#fff;color:var(--red-deep);font-weight:700;text-decoration:none}
+.hmaps svg,.btn svg:not(.wa){width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;flex:none}
+.menubar a.on{border-bottom-color:var(--red);color:var(--red)}
+.fsoc{display:flex;gap:10px}
+
+/* portada con fotos que cambian */
+.slider{position:relative;border-radius:0 0 10px 10px;overflow:hidden;height:clamp(420px,52vw,560px);background:#2a1d1a;max-width:100%}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .9s, visibility .9s}
+.slide.on{opacity:1;visibility:visible}
+.slide img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,center)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(24,10,8,.78) 0%,rgba(24,10,8,.45) 50%,rgba(24,10,8,.05) 100%)}
+.slide .txt{position:absolute;inset:0 auto 0 0;z-index:1;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:clamp(24px,5vw,64px) clamp(24px,5vw,64px) 70px;max-width:660px;color:#fff}
+.slide .tag{font-family:var(--f-display);font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+.stitle{font-family:var(--f-display);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;text-transform:uppercase;line-height:1.05;margin:0}
+.slide p{margin:0;font-size:1.15rem;max-width:34ch}
+.slide .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:4px}
+.btn-ghost{border-color:#fff;color:#fff;background:transparent}
+.sarrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:52px;height:52px;border-radius:50%;border:0;background:rgba(255,255,255,.88);color:#1B1716;font-size:2rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding-bottom:4px}
+.sarrow.prev{left:14px} .sarrow.next{right:14px}
+.sdots{position:absolute;left:0;right:0;bottom:16px;z-index:2;display:flex;justify-content:center;gap:6px}
+.sdots button{width:44px;height:44px;border:0;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.sdots button::before{content:"";width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.55);transition:background .2s, transform .2s}
+.sdots button[aria-current]::before{background:#fff;transform:scale(1.3)}
+@media (max-width:680px){
+  .slider{height:520px}
+  .slide::after{background:linear-gradient(0deg,rgba(24,10,8,.85) 0%,rgba(24,10,8,.55) 50%,rgba(24,10,8,.05) 85%)}
+  .slide .txt{inset:auto 0 0 0;justify-content:flex-end;max-width:none}
+  .sarrow{top:auto;bottom:16px;transform:none;width:44px;height:44px}
+  .hmaps span{display:none}
+}
+
+/* categorías: tres apartados */
+.cats{grid-template-columns:repeat(3,1fr)}
+.cat img.shoe{object-fit:contain;background:#fff;padding:12px 12px 64px}
+
+/* cabecera de cada apartado */
+.phead{padding-block:28px 8px}
+.crumbs{margin:0 0 10px;color:var(--muted);font-size:.95rem}
+.crumbs a{color:var(--muted)}
+.phead h1{font-family:var(--f-display);font-size:clamp(2rem,4.5vw,3rem);font-weight:800;text-transform:uppercase;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.phead h1 small{font-family:var(--f-body);font-size:1rem;font-weight:400;text-transform:none;color:var(--muted)}
+.phead .bfilter{margin-top:20px}
+#c-list{padding-block:24px 64px}
+[hidden]{display:none!important}
+.bcard{color:inherit;text-decoration:none;display:block;min-width:0}
+.bcard figure{height:100%}
+.bcard .go{color:var(--red)!important;font-weight:700;margin-top:4px}
+.bcard:hover figure{border-color:var(--red)}
+.brands a{color:inherit;text-decoration:none}
+.brands li:has(a):hover{border-color:var(--red)}
+.bhead a{color:inherit;text-decoration:none}
+.bhead a:hover{color:var(--red)}
+.crumbs a{color:var(--muted)}
+@media (min-width:681px){ .slide .txt{padding-left:96px} }
+@media (max-width:520px){
+  header.main .in{flex-wrap:nowrap}
+  .logo{gap:8px} .logo svg{width:34px;height:24px} .logo b{font-size:1rem} .logo small{font-size:.58rem;letter-spacing:.1em}
+  .hright{gap:6px} .soc{width:40px;height:40px} .hmaps{padding:8px 10px}
+}
+@media (max-width:900px){ .cats{grid-template-columns:1fr 1fr} }
+@media (max-width:520px){ .cats{grid-template-columns:1fr} }
+.bhead{font-size:1.15rem}
+
+/* Ampliar foto */
+.prod .pic{cursor:zoom-in}
+.prod .zbtn{position:absolute;right:10px;top:10px;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:0;border-radius:50%;background:rgba(27,23,22,.72);color:#fff;cursor:pointer}
+.prod .zbtn svg{width:22px;height:22px}
+.lb{position:fixed;inset:0;z-index:100;background:#fff;display:flex;flex-direction:column}
+.lb[hidden]{display:none}
+.lb-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid #E4DFDD;color:#1B1716}
+.lb-top b{font-size:18px}
+.lb-top span{display:block;color:#605856;font-size:15px}
+.lb-x{min-width:52px;min-height:52px;border:2px solid #1B1716;border-radius:999px;background:#fff;color:#1B1716;font-size:28px;line-height:1;cursor:pointer}
+.lb-stage{flex:1;position:relative;overflow:hidden;touch-action:none;cursor:zoom-in;background:#fff}
+.lb-stage.z{cursor:grab}
+.lb-stage img{position:absolute;left:50%;top:50%;max-width:100%;max-height:100%;transform:translate(-50%,-50%) scale(1);transform-origin:center;transition:transform .2s ease;user-select:none;-webkit-user-drag:none}
+.lb-stage.drag img{transition:none}
+.lb-bot{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 16px 18px;border-top:1px solid #E4DFDD;color:#1B1716;flex-wrap:wrap}
+.lb-bot .cbtn{color:#1B1716;border-color:#1B1716}
+.lb-hint{width:100%;text-align:center;color:#605856;font-size:15px;margin:0}
+.prod .prow{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:4px 0 8px}
+.prod .prow .price{margin:0}
+.prod .dbtn{min-height:44px;padding:6px 14px;border:2px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);font:inherit;font-size:16px;font-weight:700;cursor:pointer}
+.prod .dbtn[aria-expanded="true"]{background:var(--soft)}
+.prod .desc{margin:0 0 12px;padding:12px 14px;border-radius:12px;background:var(--soft);color:var(--ink);font-size:16px;line-height:1.5}
+.prod .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.prod .tag{padding:4px 10px;border-radius:999px;background:#fff;border:1.5px solid #1B1716;color:#1B1716;font-size:14px;font-weight:700}
+</style>
+</head>
+<body>
+
+
+<div class="strip" aria-live="polite"><div class="in"><span class="smsg" id="smsg">Pregunta por tu talla por WhatsApp</span></div></div>
+
+<header class="main"><div class="in">
+  <a class="logo" href="#inicio" aria-label="Zapatos Cristina, inicio">
+    <svg viewBox="0 0 46 30" aria-hidden="true"><path d="M3 23.5c0-5 1.2-12 2.6-15.5 1-.8 3.3-.6 4.2.6 1.8 2.6 4.4 3.3 7.4 2.6l2.7-3.4c1.5-.8 3.2-.3 4.2 1l4.6 6.6c2.5 1.8 7.5 2.7 11 3.7 2.2.6 3.3 2.2 3.3 4.4H3z"/><path d="M3 23.5v2.4c0 .9.6 1.6 1.5 1.6h37.6c1.3 0 2.4-1 2.4-2.4"/><path d="M22.5 10.5l2.4 1.2M24.5 13l2.4 1.2M26.5 15.5l2.4 1.2"/></svg>
+    <span><b>ZAPATOS CRISTINA</b><small>C/ COMPAÑÍA Nº2 · CÁDIZ</small></span>
+  </a>
+  <div class="hright">
+    <a class="soc js-soc" data-net="instagram" href="#" aria-label="Instagram de Zapatos Cristina"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a class="soc js-soc" data-net="facebook" href="#" aria-label="Facebook de Zapatos Cristina"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a><a class="soc js-soc" data-net="tiktok" href="#" aria-label="TikTok de Zapatos Cristina"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.8 2.4 4.6 5 4.8"/></svg></a>
+    <a class="hmaps" href="https://www.google.com/maps/dir/?api=1&amp;destination=Zapatos%20Cristina%2C%20Calle%20Compa%C3%B1%C3%ADa%202%2C%2011005%20C%C3%A1diz&amp;destination_place_id=ChIJQ0037IbRDQ0Rb1BJHWxKE74" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.6 7-12a7 7 0 0 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Cómo llegar</span></a>
+  </div>
+</div></header>
+
+<nav class="menubar" aria-label="Secciones de la tienda"><div class="in">
+  <a href="#senora" data-nav="senora">Señora</a>
+  <a href="#caballero" data-nav="caballero">Caballero</a>
+  <a href="#barefoot" data-nav="barefoot">Barefoot</a>
+  <a href="#marcas" data-nav="marcas">Marcas</a>
+  <a href="#visitanos" data-nav="visitanos">Tienda y horario</a>
+</div></nav>
+
+<main>
+<!-- ============ INICIO ============ -->
+<div class="view" id="view-inicio">
+  <div class="in">
+    <div class="slider" id="slider" aria-roledescription="carrusel" aria-label="Novedades de la tienda">
+      <div class="slide on" style="--pos:center 35%">
+        <img src="img/tienda/s-novedades.jpg" alt="Estantería de la tienda con botas y botines de Pikolinos y Refresh">
+        <div class="txt"><span class="tag">Otoño-invierno 2026</span><h1 class="stitle">Nueva colección ya en tienda</h1><p>Botines, botas y zapatillas de piel para este invierno.</p><div class="actions"><a class="btn btn-white" href="#senora">Ver señora</a><a class="btn btn-ghost" href="#caballero">Ver caballero</a></div></div>
+      </div>
+      <div class="slide" style="--pos:center 40%">
+        <img src="img/tienda/s-senora.jpg" alt="Estantería de señora con botines, zapatos y deportivos" loading="lazy">
+        <div class="txt"><span class="tag">Señora</span><h2 class="stitle">Comodidad para todo el día</h2><p>Pikolinos, Fluchos, Carmela, Mustang y más marcas.</p><div class="actions"><a class="btn btn-white" href="#senora">Ver modelos de señora</a></div></div>
+      </div>
+      <div class="slide" style="--pos:center 50%">
+        <img src="img/tienda/s-caballero.jpg" alt="Estantería de caballero con zapatos y botines de Pikolinos y Callaghan" loading="lazy">
+        <div class="txt"><span class="tag">Caballero</span><h2 class="stitle">Zapatos para ir cómodo</h2><p>Pikolinos, Callaghan, Fluchos, Imac y más marcas.</p><div class="actions"><a class="btn btn-white" href="#caballero">Ver caballero</a></div></div>
+      </div>
+      <div class="slide" style="--pos:center 45%">
+        <img src="img/tienda/s-tienda.jpg" alt="Interior de la tienda con estanterías de calzado a los dos lados" loading="lazy">
+        <div class="txt"><span class="tag">Barefoot</span><h2 class="stitle">Como andar descalzo</h2><p>Horma ancha, suela plana y flexible. Pregúntanos y te aconsejamos.</p><div class="actions"><a class="btn btn-white" href="#barefoot">Ver calzado barefoot</a></div></div>
+      </div>
+      <button type="button" class="sarrow prev" aria-label="Foto anterior">‹</button>
+      <button type="button" class="sarrow next" aria-label="Foto siguiente">›</button>
+      <div class="sdots" role="group" aria-label="Elegir foto"></div>
+    </div>
+  </div>
+
+
+
+  <section class="gend-sec">
+    <div class="in gend">
+      <a class="gtile" href="#senora"><img src="img/tienda/mujer.jpg" alt="Botines y botas de mujer en la tienda"><div class="gtxt"><h2>Mujer</h2><span class="gbtn">Ver colección</span></div></a>
+      <a class="gtile" href="#caballero"><img src="img/tienda/hombre.jpg" alt="Botas y zapatos de hombre en la tienda"><div class="gtxt"><h2>Hombre</h2><span class="gbtn">Ver colección</span></div></a>
+    </div>
+  </section>
+
+  <section class="rev">
+    <div class="in">
+      <div class="score"><b>4,7</b><div class="stars" aria-label="4,7 de 5 estrellas">★★★★★</div><span>26 opiniones en Google</span></div>
+      <div class="quotes">
+        <figure><blockquote>Da gusto entrar. La atención siempre de 10.</blockquote><figcaption>Opinión en Google</figcaption></figure>
+        <figure><blockquote>Gran variedad de marcas y diferentes estilos. Calidad precio, inmejorable.</blockquote><figcaption>Opinión en Google</figcaption></figure>
+        <figure><blockquote>Nos recomendó unos zapatos adaptados para la tercera edad que le vienen muy bien.</blockquote><figcaption>Rubén C. · Opinión en Google</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="in">
+    <div class="perks">
+      <div class="perk"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="11" r="5"/><path d="M6 27c1.5-5 5.5-8 10-8s8.5 3 10 8"/></svg><div><b>Atención personal</b><span>Te aconsejamos con calma</span></div></div>
+      <div class="perk"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 22c4 0 6-6 12-6 5 0 7 3 12 3v5H4z"/><path d="M4 24h24"/></svg><div><b>Calzado cómodo</b><span>Piel y buenas suelas</span></div></div>
+      <div class="perk"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 25V9l10-4 10 4v16"/><path d="M12 25v-8h8v8"/></svg><div><b>Marcas españolas</b><span>Calidad que dura años</span></div></div>
+      <div class="perk"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28s9-8.5 9-15a9 9 0 0 0-18 0c0 6.5 9 15 9 15z"/><circle cx="16" cy="13" r="3"/></svg><div><b>Centro de Cádiz</b><span>C/ Compañía, 2</span></div></div>
+    </div>
+  </div>
+
+  <section id="visitanos">
+    <div class="in visit">
+      <figure><img src="img/fachada.jpg" alt="Fachada de Zapatos Cristina en la calle Compañía, con el toldo rojo y el escaparate"></figure>
+      <div>
+        <p class="eyebrow">Visítanos</p>
+        <p class="big">C/ Compañía, 2</p>
+        <p>11005 Cádiz · Teléfono 856 36 72 27</p><p>WhatsApp 628 83 47 44</p>
+        <table class="hours"><tbody>
+          <tr><td>Lunes a viernes</td><td>10:30–14:00 · 17:30–20:30</td></tr>
+          <tr><td>Sábado</td><td>10:30–14:00</td></tr>
+          <tr class="closed"><td>Domingo</td><td>Cerrado</td></tr>
+        </tbody></table>
+        <div class="actions">
+          <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&amp;destination=Zapatos%20Cristina%2C%20Calle%20Compa%C3%B1%C3%ADa%202%2C%2011005%20C%C3%A1diz&amp;destination_place_id=ChIJQ0037IbRDQ0Rb1BJHWxKE74" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.6 7-12a7 7 0 0 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg> Cómo llegar en Google Maps</a>
+          <a class="btn btn-wa js-wa" data-msg="Hola, os escribo desde la web." href="#visitanos"><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg> Escríbenos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ MARCAS ============ -->
+<div class="view" id="view-marcas" hidden>
+  <section id="marcas">
+    <div class="in">
+      <div class="head"><p class="eyebrow">Marcas</p><h2>Nuestras marcas en tienda</h2></div>
+      <div class="bgal">
+        <a class="bcard" href="#marca-pikolinos"><figure><img src="img/marcas/pikolinos-v2.jpg" alt="Rincón de Pikolinos en la tienda" loading="lazy"><figcaption><b>Pikolinos</b><span>Piel y comodidad para cada día</span><span class="go">Ver modelos →</span></figcaption></figure></a>
+        <a class="bcard" href="#marca-carmela"><figure><img src="img/marcas/carmela-v3.jpg" alt="Escaparate de Carmela en la tienda" loading="lazy"><figcaption><b>Carmela</b><span>Botas y botines de piel</span><span class="go">Ver modelos →</span></figcaption></figure></a>
+        <a class="bcard" href="#marca-fluchos"><figure><img src="img/marcas/fluchos-v3.jpg" alt="Zapatos de señora de Fluchos" loading="lazy"><figcaption><b>Fluchos</b><span>Comodidad hecha en España</span><span class="go">Ver modelos →</span></figcaption></figure></a>
+        <a class="bcard" href="#marca-callaghan"><figure><img src="img/marcas/callaghan-v2.jpg" alt="Escaparate de Callaghan en la tienda" loading="lazy"><figcaption><b>Callaghan</b><span>Ligeros y flexibles</span><span class="go">Ver modelos →</span></figcaption></figure></a>
+        <a class="bcard" href="#marca-art"><figure><img src="img/marcas/art-v2.jpg" alt="Rincón de Art en la tienda" loading="lazy"><figcaption><b>Art</b><span>Nueva temporada</span><span class="go">Ver modelos →</span></figcaption></figure></a>
+        <a class="bcard" href="#marca-24-hrs"><figure><img src="img/marcas/24hrs-v2.jpg" alt="Botines y zapatilla de 24 Hrs" loading="lazy"><figcaption><b>24 Hrs</b><span>Ligeros y hechos en España</span><span class="go">Ver modelos →</span></figcaption></figure></a>
+        <a class="bcard" href="#marca-gioseppo"><figure><img src="img/marcas/gioseppo-v3.jpg" alt="Zapatillas de Gioseppo en la tienda" loading="lazy"><figcaption><b>Gioseppo</b><span>Moda y tendencia</span><span class="go">Ver modelos →</span></figcaption></figure></a>
+        <a class="bcard" href="#marca-chika10"><figure><img src="img/marcas/chika10-v3.jpg" alt="Botas altas de Chika10 en la tienda" loading="lazy"><figcaption><b>Chika10</b><span>Botas y botines de temporada</span><span class="go">Ver modelos →</span></figcaption></figure></a>
+        <a class="bcard" href="#marca-dockers"><figure><img src="img/marcas/dockers-v3.jpg" alt="Zapatos barefoot de Dockers en la tienda" loading="lazy"><figcaption><b>Dockers</b><span>Barefoot de caballero</span><span class="go">Ver modelos →</span></figcaption></figure></a>
+      </div>
+      <p class="eyebrow" style="margin-top:32px">Y además</p>
+      <ul class="brands"><li><a href="#marca-pikolinos">Pikolinos</a></li><li><a href="#marca-callaghan">Callaghan</a></li><li><a href="#marca-mustang">Mustang · Maria Mare</a></li><li><a href="#marca-fluchos">Fluchos · Dorking</a></li><li><a href="#marca-el-naturalista">El Naturalista</a></li><li><a href="#marca-gioseppo">Gioseppo</a></li><li><a href="#marca-imac">Imac</a></li><li><a href="#marca-daniela-vega">Daniela Vega</a></li><li><a href="#marca-suave">Suave</a></li><li><a href="#marca-chika10">Chika10</a></li><li><a href="#marca-bbup">BBUP</a></li><li><a href="#marca-fly-flot">Fly Flot</a></li><li><a href="#marca-cosdam">Cosdam</a></li><li><a href="#marca-luisetti">Luisetti</a></li><li><a href="#marca-refresh">Refresh</a></li><li><a href="#marca-dockers">Dockers</a></li></ul>
+    </div>
+  </section>
+</div>
+
+<!-- ============ LEGAL ============ -->
+<div class="view" id="view-legal" hidden>
+  <section class="legal">
+    <div class="in">
+      <p class="crumbs"><a href="#inicio">Inicio</a> › Aviso legal y privacidad</p>
+
+      <h2 id="aviso-legal">Aviso legal</h2>
+      <p>En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de los datos del titular de esta web:</p>
+      <ul>
+        <li><b>Titular:</b> Cristina Porfirio Bruzón</li>
+        <li><b>NIF:</b> <span class="js-nif">31262350Z</span></li>
+        <li><b>Nombre comercial:</b> Zapatos Cristina</li>
+        <li><b>Domicilio:</b> C/ Compañía, 2 · 11005 Cádiz</li>
+        <li><b>Teléfono:</b> 856 36 72 27 · <b>WhatsApp:</b> 628 83 47 44</li>
+        <li><b>Correo electrónico:</b> <a href="mailto:crisporfirio70@gmail.com">crisporfirio70@gmail.com</a></li>
+      </ul>
+      <p>Esta web es un escaparate informativo de la tienda. No se venden productos a través de ella: los precios son orientativos y pueden cambiar sin previo aviso. La disponibilidad de tallas y colores se confirma en tienda, por teléfono o por WhatsApp.</p>
+      <p>Los textos, fotografías y diseño de esta web son de Zapatos Cristina, salvo las marcas y logotipos de los fabricantes, que pertenecen a sus propietarios. No se permite copiarlos sin autorización.</p>
+      <p>Zapatos Cristina no se hace responsable del contenido de las webs externas a las que se enlaza (Google Maps, WhatsApp, Instagram, Facebook).</p>
+
+      <h2 id="privacidad">Política de privacidad</h2>
+      <p><b>Responsable:</b> Cristina Porfirio Bruzón (Zapatos Cristina), C/ Compañía, 2 · 11005 Cádiz · <a href="mailto:crisporfirio70@gmail.com">crisporfirio70@gmail.com</a>.</p>
+      <p><b>Qué datos tratamos:</b> esta web no tiene formularios ni registro de usuarios. Solo tratamos los datos que nos facilites tú mismo si nos escribes por WhatsApp, correo electrónico o nos llamas (nombre, teléfono y el contenido de tu consulta).</p>
+      <p><b>Para qué:</b> únicamente para responder a tu consulta y, si lo pides, avisarte cuando llegue un modelo o una talla.</p>
+      <p><b>Base legal:</b> tu consentimiento al ponerte en contacto con nosotros.</p>
+      <p><b>Cuánto tiempo:</b> el necesario para atender tu consulta. Después se eliminan, salvo que la ley obligue a conservarlos.</p>
+      <p><b>Destinatarios:</b> no cedemos tus datos a nadie. Si usas el botón de WhatsApp, la conversación pasa por WhatsApp (Meta), que tiene su propia política de privacidad.</p>
+      <p><b>Tus derechos:</b> puedes pedir acceder a tus datos, corregirlos, borrarlos, limitar u oponerte a su uso y su portabilidad escribiendo a <a href="mailto:crisporfirio70@gmail.com">crisporfirio70@gmail.com</a>. Si crees que no se han respetado tus derechos, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).</p>
+
+      <h2 id="cookies">Cookies</h2>
+      <p>Esta web no utiliza cookies propias ni de terceros, ni herramientas de publicidad o de seguimiento. Por eso no te mostramos ningún aviso de cookies.</p>
+      <p class="upd">Última actualización: noviembre de 2026.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ APARTADOS DE PRODUCTOS ============ -->
+<div class="view" id="view-cat" hidden>
+  <div class="in">
+    <div class="phead">
+      <p class="crumbs" id="c-crumbs"></p>
+      <h1 id="c-title"></h1>
+      <p class="intro" id="c-intro"></p>
+      <div class="bfilter" id="bfilter" role="group" aria-label="Filtrar por marca"></div>
+    </div>
+    <div id="c-list"></div>
+  </div>
+</div>
+</main>
+
+<footer><div class="in">
+  <div><h3>Zapatos Cristina</h3><p>Zapatería en el centro de Cádiz. Calzado cómodo de señora y caballero.</p></div>
+  <div><h3>Contacto</h3><p>C/ Compañía, 2 · 11005 Cádiz</p><p>Teléfono 856 36 72 27</p><p>WhatsApp 628 83 47 44</p><p><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Zapatos%20Cristina%2C%20Calle%20Compa%C3%B1%C3%ADa%202%2C%2011005%20C%C3%A1diz&amp;destination_place_id=ChIJQ0037IbRDQ0Rb1BJHWxKE74" target="_blank" rel="noopener">Cómo llegar en Google Maps</a></p></div>
+  <div><h3>Síguenos</h3><p class="fsoc"><a class="soc js-soc" data-net="instagram" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a class="soc js-soc" data-net="facebook" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a><a class="soc js-soc" data-net="tiktok" href="#" aria-label="TikTok de Zapatos Cristina"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.8 2.4 4.6 5 4.8"/></svg></a></p></div>
+  <p class="copy">© 2026 Zapatos Cristina · Cádiz · <a href="#legal">Aviso legal</a> · <a href="#legal">Privacidad</a> · <a href="#legal">Cookies</a></p>
+</div></footer>
+
+<a class="float-wa js-wa" data-msg="Hola, os escribo desde la web." href="#visitanos" aria-label="Escríbenos por WhatsApp"><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg> WhatsApp</a>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <div class="lb-top"><div><b id="lb-name"></b><span id="lb-col"></span></div><button type="button" class="lb-x" id="lb-x" aria-label="Cerrar">×</button></div>
+  <div class="lb-stage" id="lb-stage"><img id="lb-img" alt=""></div>
+  <div class="lb-bot"><p class="lb-hint">Toca la foto para acercar. Vuelve a tocar para alejar.</p>
+    <button type="button" class="cbtn" id="lb-prev" aria-label="Color anterior">‹ Anterior</button>
+    <button type="button" class="cbtn" id="lb-next" aria-label="Siguiente color">Siguiente ›</button></div>
+</div>
+<script>
+// Número de WhatsApp con prefijo 34 y sin espacios, p. ej. "34600000000". Vacío = pendiente.
+const WHATSAPP = "34628834744";
+
+// Redes sociales: cuando tengáis la cuenta de TikTok, poned aquí el enlace.
+
+// Mensajes de la barra superior (van cambiando)
+const MESSAGES = [
+  "Pregunta por tu talla por WhatsApp",
+  "Nueva colección otoño-invierno ya en tienda",
+  "Calzado barefoot: como andar descalzo",
+  "C/ Compañía, 2 · Centro de Cádiz"
+];
+
+// PRODUCTOS — un modelo por entrada; cada color es una foto.
+// who: "senora", "caballero" o "unisex" (unisex sale en los dos apartados) · brand: fabricante (agrupa y filtra) · line: submarca opcional
+// barefoot: true → sale también en el apartado Barefoot
+// price: precio de venta con coma, p. ej. "59,95" (si falta, no se muestra)
+const PRODUCTS = [
+  {who:"senora", brand:"Mustang", line:"Maria Mare", name:"Salerno", ref:"63735", type:"Zapatilla con cuña", desc:"Zapatilla deportiva con cuña baja, que da un poco de altura sin perder comodidad. Plantilla acolchada, suela de goma y cierre de cordones. Material sintético con sello vegano de PETA.", tags:["Cuña baja","Vegana"], price:"49,95", colors:[
+    {color:"Dorado y marrón", code:"C60927", img:"img/prod/salerno-lado.jpg"}]},
+  {who:"senora", brand:"Mustang", name:"Climb", ref:"60431", type:"Zapatilla deportiva", desc:"Zapatilla deportiva de inspiración trekking con cordones tipo cuerda. Su suela Extralight la hace muy ligera, ideal para llevarla durante horas, y la plantilla acolchada suma comodidad en cada paso. Tejido textil con sello vegano de PETA.", tags:["Ligera","Vegana"], price:"55,95", colors:[
+    {color:"Marrón", code:"C60879", img:"img/prod/mustang-climb-marron.jpg"}]},
+  {who:"senora", brand:"Mustang", line:"Maria Mare", name:"Livana", ref:"63730", type:"Zapatilla tipo mercedita con velcro", desc:"Zapatilla deportiva tipo mercedita con tira de velcro ajustable, muy fácil de poner y quitar. Suela de goma de perfil deportivo y plantilla acolchada para mayor comodidad. Tejido textil con sello vegano de PETA.", tags:["Velcro","Vegana"], price:"39,95", colors:[
+    {color:"Marrón", code:"C60739", img:"img/prod/mm-livia-marron.jpg"}]},
+  {who:"senora", brand:"Mustang", name:"Free Aria", ref:"60840", barefoot:true, type:"Zapatilla barefoot", desc:"Zapatilla barefoot diseñada junto al traumatólogo deportivo Dr. Juanjo López para respetar la forma natural del pie. Puntera ancha, suela totalmente plana y muy flexible, que favorece una mejor postura al caminar. Incluye una plantilla de transición para acostumbrarse poco a poco al calzado minimalista.", tags:["Barefoot","Puntera ancha"], price:"49,95", colors:[
+    {color:"Beige metalizado", img:"img/prod/mustang-freearia-60840-beige-metal.jpg"},
+    {color:"Marrón", code:"C58603", img:"img/prod/mustang-freearia-60840-marron.jpg"}]},
+  {who:"senora", brand:"Mustang", name:"Free Aria", ref:"60902", barefoot:true, type:"Zapatilla barefoot", desc:"Zapatilla barefoot diseñada junto al traumatólogo deportivo Dr. Juanjo López para respetar la forma natural del pie. Puntera ancha, suela totalmente plana y muy flexible, que favorece una mejor postura al caminar. Incluye una plantilla de transición para acostumbrarse poco a poco al calzado minimalista.", tags:["Barefoot","Puntera ancha"], price:"49,95", colors:[
+    {color:"Beige", img:"img/prod/mustang-freearia-60902-beige.jpg"}]},
+  {who:"caballero", brand:"Mustang", name:"Free Miami", ref:"84766", barefoot:true, type:"Zapatilla barefoot", desc:"Zapatilla barefoot diseñada junto al traumatólogo deportivo Dr. Juanjo López para respetar la forma natural del pie. Puntera ancha, suela totalmente plana y muy flexible, que favorece una mejor postura al caminar. Incluye una plantilla de transición para acostumbrarse poco a poco al calzado minimalista y otra térmica para los días de frío.", tags:["Barefoot", "Puntera ancha"], price:"59,95", colors:[
+    {color:"Beige y kaki", code:"C59407", img:"img/prod/mustang-freemiami-c59407.jpg"},
+    {color:"Kaki", code:"C60344", img:"img/prod/mustang-freemiami-c60344.jpg"},
+    {color:"Marrón", code:"C60347", img:"img/prod/mustang-freemiami-c60347.jpg"},
+    {color:"Blanco", code:"C19667", img:"img/prod/mustang-freemiami-c19667-v3.jpg"}]},
+  {who:"caballero", brand:"Mustang", name:"Miller", ref:"84889", type:"Zapatilla deportiva", desc:"Zapatilla urbana de inspiración deportiva, con suela Extralight muy ligera y plantilla Starfit que suma comodidad en cada paso. Detalles acolchados, cierre de cordones y tejido textil con sello vegano de PETA.", tags:["Ligera", "Vegana"], price:"59,95", colors:[
+    {color:"Verde", code:"C60807", img:"img/prod/mustang-miller-verde.jpg"},
+    {color:"Azul", code:"C56255", img:"img/prod/mustang-miller-azul.jpg"}]},
+  {who:"caballero", brand:"Mustang", name:"Porland", ref:"84890", type:"Zapatilla deportiva", desc:"Zapatilla de estilo retro running con refuerzos de efecto ante y costuras a la vista. Interior acolchado, plantilla Comfort para mayor comodidad, suela con relieve y cordones planos. Tejido textil con sello vegano de PETA.", tags:["Acolchada", "Vegana"], price:"49,95", colors:[
+    {color:"Kaki", code:"C60918", img:"img/prod/mustang-portland-kaki.jpg"}]},
+  {who:"senora", brand:"Fluchos", name:"Live", ref:"F2248", type:"Deportivo", desc:"De la línea Live de Fluchos, con una cuña discreta que da algo de altura y estiliza sin perder comodidad. Piel por fuera, forro textil, suela EVA muy ligera y plantilla extraíble.", tags:["Cuña baja", "Plantilla extraíble"], price:"109,00", colors:[
+    {color:"Marrón", img:"img/prod/fl-live-f2248-marron.jpg"}]},
+  {who:"senora", brand:"Fluchos", name:"Live", ref:"F2096", type:"Deportivo", desc:"De la línea Live de Fluchos, con una cuña discreta que da algo de altura y estiliza sin perder comodidad. Piel por fuera, forro textil, suela EVA muy ligera y plantilla extraíble.", tags:["Cuña baja", "Plantilla extraíble"], price:"105,00", colors:[
+    {color:"Burdeos", img:"img/prod/fl-live-f2096-burdeos.jpg"},
+    {color:"Negro", img:"img/prod/fl-live-f2096-negro.jpg"}]},
+  {who:"senora", brand:"Fluchos", name:"Live", ref:"F2100", type:"Botín", desc:"De la línea Live de Fluchos, con una cuña discreta que da algo de altura y estiliza sin perder comodidad. Piel por fuera, forro textil, suela EVA muy ligera y plantilla extraíble.", tags:["Cuña baja", "Plantilla extraíble"], price:"105,00", colors:[
+    {color:"Negro", img:"img/prod/fl-live-f2100-negro.jpg"}]},
+  {who:"senora", brand:"Fluchos", line:"Dorking", name:"Rodin", ref:"D8669", type:"Zapato de tacón con pulsera", desc:"Zapato de tacón con pulsera al tobillo y hebilla, que sujeta bien el pie y da seguridad al caminar. Sencillo y cómodo, sirve tanto para el día a día como para un plan especial.", tags:["Pulsera al tobillo"], price:"89,90", colors:[
+    {color:"Negro y verde", img:"img/prod/dk-rodin-d8669-negro-verde.jpg"},
+    {color:"Marrón", img:"img/prod/dk-rodin-d8669-marron.jpg"}]},
+  {who:"senora", brand:"Fluchos", line:"Dorking", name:"Frixe", ref:"D9820", type:"Bota", desc:"De líneas sencillas y elegantes, con un tacón que estiliza sin perder estabilidad al pisar. Piel por fuera y suela con tecnología Light, más ligera de lo que parece, para llevarlo cómodamente a diario.", tags:["Ligera", "Piel"], price:"160,00", colors:[
+    {color:"Negro", img:"img/prod/dk-frixe-d9820-negro.jpg"}]},
+  {who:"senora", brand:"Fluchos", line:"Dorking", name:"Lexi", ref:"D8610", type:"Bota", desc:"Bota de piel todoterreno, cómoda para el día a día y fácil de combinar con cualquier look. Tacón cómodo, forro textil y suela resistente.", tags:["Piel"], price:"149,00", colors:[
+    {color:"Negro", img:"img/prod/dk-lexi-d8610-negro.jpg"},
+    {color:"Burdeos", img:"img/prod/dk-lexi-d8610-burdeos-v2.jpg"}]},
+  {who:"senora", brand:"Fluchos", line:"Dorking", name:"Frixe", ref:"D9816", type:"Botín", desc:"De líneas sencillas y elegantes, con un tacón que estiliza sin perder estabilidad al pisar. Piel por fuera y suela con tecnología Light, más ligera de lo que parece, para llevarlo cómodamente a diario.", tags:["Ligera", "Piel"], price:"115,00", colors:[
+    {color:"Negro", img:"img/prod/dk-frixe-d9816-negro.jpg"}]},
+  {who:"senora", brand:"Fluchos", line:"Dorking", name:"Layla", ref:"D9545", type:"Botín", desc:"Botín de serraje sencillo y elegante, con un tacón bajo que estiliza y resulta cómodo durante toda la jornada. Cremallera lateral para calzarlo y descalzarlo con facilidad.", tags:["Tacón bajo", "Cremallera"], price:"115,00", colors:[
+    {color:"Camel", img:"img/prod/dk-layla-d9545-camel.jpg"}]},
+  {who:"senora", brand:"Fluchos", line:"Dorking", name:"Ikia", ref:"D9368", type:"Botín", desc:"Botín de piel con detalles metálicos en las hebillas, perfecto para la oficina, una cena o un evento, y también para un look más informal. Combina igual de bien con vestido que con pantalón.", tags:["Piel"], price:"105,00", colors:[
+    {color:"Marrón", img:"img/prod/dk-ikia-d9368-marron.jpg"}]},
+  {who:"caballero", brand:"Fluchos", name:"Luca", ref:"8499", type:"Mocasín", desc:"De la línea Luca de Fluchos, cómodo y moderno. Piel suave y flexible, plantilla acolchada extraíble y suela de goma con sistema Shock Absorber, que amortigua el impacto al caminar.", tags:["Amortiguación", "Plantilla extraíble"], price:"99,90", colors:[
+    {color:"Negro", img:"img/prod/fl-luca-8499-negro.jpg"}]},
+  {who:"caballero", brand:"Fluchos", name:"Luca", ref:"8498", type:"Zapato de cordones", desc:"De la línea Luca de Fluchos, cómodo y moderno. Piel suave y flexible, plantilla acolchada extraíble y suela de goma con sistema Shock Absorber, que amortigua el impacto al caminar.", tags:["Amortiguación", "Plantilla extraíble"], price:"99,90", colors:[
+    {color:"Negro", img:"img/prod/fl-luca-8498-negro.jpg"}]},
+  {who:"caballero", brand:"Fluchos", name:"Celtic", ref:"F0247", type:"Zapato de cordones, puntera lisa", desc:"Zapato de piel engrasada de estilo clásico con un toque informal, que sirve tanto para vestir como para el día a día. Suela de EVA muy ligera y plantilla extraíble.", tags:["Ligera", "Plantilla extraíble"], price:"119,00", colors:[
+    {color:"Marrón", img:"img/prod/fl-celtic-f0247-marron.jpg"}]},
+  {who:"caballero", brand:"Fluchos", name:"Celtic", ref:"F0248", type:"Zapato de cordones, puntera con repunte", desc:"Zapato de piel engrasada de estilo clásico con un toque informal, que sirve tanto para vestir como para el día a día. Suela de EVA muy ligera y plantilla extraíble.", tags:["Ligera", "Plantilla extraíble"], price:"119,00", colors:[
+    {color:"Marrón", img:"img/prod/fl-celtic-f0248-marron.jpg"}]},
+  {who:"caballero", brand:"Fluchos", name:"Elder", ref:"F2184", type:"Deportivo", desc:"Deportivo de serraje para ir más arreglado sin renunciar a la comodidad. Horma redondeada y amplia, suela dentada con muy buen agarre y plantilla extraíble.", tags:["Horma ancha", "Antideslizante"], price:"124,00", colors:[
+    {color:"Kaki", img:"img/prod/fl-elder-f2184-kaki.jpg"}]},
+  {who:"caballero", brand:"Fluchos", name:"Jeff", ref:"F2511", type:"Deportivo", desc:"De la línea Jeff de Fluchos, que une el estilo clásico con un aire actual. Corte de nobuck, suela con buen agarre y plantilla extraíble, con la comodidad de siempre de la marca.", tags:["Piel", "Plantilla extraíble"], price:"119,00", colors:[
+    {color:"Marrón", img:"img/prod/fl-jeff-f2511-marron.jpg"}]},
+  {who:"caballero", brand:"Fluchos", name:"Jeff", ref:"F2280", type:"Deportivo de caña alta", desc:"De la línea Jeff de Fluchos, que une el estilo clásico con un aire actual. Corte de nobuck, suela con buen agarre y plantilla extraíble, con la comodidad de siempre de la marca.", tags:["Piel", "Plantilla extraíble"], price:"125,00", colors:[
+    {color:"Marrón", img:"img/prod/fl-jeff-f2280-marron.jpg"}]},
+  {who:"caballero", brand:"Fluchos", name:"Terry", ref:"F1343", type:"Bota", desc:"Bota de piel de diseño actual con la comodidad de Fluchos. Suela resistente con buen agarre y plantilla extraíble.", tags:["Piel", "Plantilla extraíble"], price:"125,00", colors:[
+    {color:"Negro", img:"img/prod/fl-terry-f1343-negro.jpg"}]},
+  {who:"unisex", brand:"El Naturalista", name:"Oroel", ref:"N5435A", barefoot:true, type:"Zapatilla barefoot", desc:"Zapatilla barefoot ligera y muy flexible, que deja que el pie se mueva de forma natural en cada paso. Combina piel y nylon, con suela de caucho y horma cómoda y ancha de delante. Cierre de cordones y plantilla extraíble.", tags:["Barefoot","Plantilla extraíble"], price:"115,00", colors:[
+    {color:"Burdeos", img:"img/prod/en-oroel-n5435a-burdeos.jpg"},
+    {color:"Azul marino", img:"img/prod/en-oroel-n5435a-marino.jpg"}]},
+  {who:"unisex", brand:"El Naturalista", name:"Nómada", ref:"N5262", barefoot:true, type:"Botín chelsea barefoot", desc:"Botín Chelsea barefoot de piel engrasada, plano, con elásticos laterales y dos tiradores para calzarlo sin esfuerzo. La puntera ancha deja que los dedos se abran al pisar y el talón va a la misma altura que la puntera, para una pisada natural. Suela de caucho blanda con buen agarre en suelo mojado, forro de piel y plantilla extraíble.", tags:["Barefoot","Fácil de calzar"], price:"119,95", colors:[
+    {color:"Kaki", img:"img/prod/en-nomada-n5262-kaki.jpg"}]},
+  {who:"senora", brand:"Art", name:"Brighton", ref:"1518", type:"Deportivo con plataforma", desc:"Zapatilla con plataforma que, pese a su altura, mantiene el pie casi plano por dentro y reparte bien el apoyo. Corte de nylon que repele la lluvia fina y se seca rápido, y suela Softlight muy ligera con estrías que agarran en suelo mojado. Horma cómoda y ancha de delante, forro transpirable y plantilla extraíble.", tags:["Plantilla extraíble","Horma ancha"], price:"109,95", colors:[
+    {color:"Negro y kaki", img:"img/prod/art-1518-negro-kaki.jpg"},
+    {color:"Negro", img:"img/prod/art-1518-negro.jpg"},
+    {color:"Rojo", img:"img/prod/art-1518-rojo.jpg"}]},
+  {who:"senora", brand:"Art", name:"Birmingham", ref:"1894A", type:"Deportivo", desc:"Zapatilla con plataforma ligera del mismo grosor de punta a talón, así el pie va plano por dentro y la pisada es estable incluso al bajar escaleras. Combina piel en puntera y talón con nylon engomado que repele la lluvia fina y se limpia con un paño. Horma cómoda y ancha de delante, forro transpirable y plantilla extraíble.", tags:["Plantilla extraíble","Horma ancha"], price:"109,95", colors:[
+    {color:"Kaki", img:"img/prod/art-1894a-kaki.jpg"}]},
+  {who:"senora", brand:"Art", name:"Birmingham", ref:"1895", type:"Deportivo de caña alta", desc:"Versión de caña alta del Birmingham, con la misma plataforma ligera Softlight que mantiene el pie plano por dentro. Corte de nylon resistente y fácil de limpiar, cierre de cordones y plantilla extraíble.", tags:["Plantilla extraíble","Ligera"], price:"109,95", colors:[
+    {color:"Kaki", img:"img/prod/art-1895-kaki.jpg"}]},
+  {who:"senora", brand:"Art", name:"Amberes", ref:"1956", type:"Bota con plataforma", desc:"Bota alta de piel nappa muy suave, con caña elástica que se adapta a la pierna y cremallera interior para calzarla con facilidad. Plataforma ultraligera con ranuras que acompañan el paso, pensada para caminar con comodidad todo el día. Forro de microfibra y plantilla extraíble.", tags:["Plantilla extraíble","Caña elástica"], price:"129,95", colors:[
+    {color:"Negro", img:"img/prod/art-1956-negro.jpg"}]},
+  {who:"senora", brand:"Art", name:"Brighton", ref:"1531", type:"Botín con plataforma", desc:"Botín de piel nappa lisa con plataforma ligera que mantiene el pie casi plano por dentro. Las estrías de la suela agarran en suelo mojado y la piel resiste las salpicaduras y se limpia con un paño. Cremallera interior, horma ancha de delante y plantilla extraíble.", tags:["Plantilla extraíble","Horma ancha"], price:"125,00", colors:[
+    {color:"Negro", img:"img/prod/art-1531-negro.jpg"}]},
+  {who:"senora", brand:"Gioseppo", name:"Botín campero", ref:"80113", type:"Serraje y piel con estampado animal", desc:"Botín de estilo campero en piel, con la caña en pelo estampado de leopardo, punta afilada y tacón bajo. Plantilla acolchada para mayor comodidad y suela resistente.", tags:["Tacón bajo", "Piel"], price:"89,95", colors:[
+    {color:"Taupe y leopardo", img:"img/prod/gio-80113-taupe-v2.jpg"}]},
+  {who:"senora", brand:"Gioseppo", name:"Botín elástico", ref:"80115", type:"Tejido elástico y tacón carey", desc:"Botín de caña elástica, muy suave y flexible, que se adapta bien a la pierna. Punta cuadrada y tacón ancho efecto carey, cómodo y estable. Plantilla acolchada y planta de piel.", tags:["Elástico", "Tacón ancho"], price:"79,95", colors:[
+    {color:"Burdeos", img:"img/prod/gio-80115-burdeos.jpg"},
+    {color:"Negro", img:"img/prod/gio-80115-negro.jpg"}]},
+  {who:"senora", brand:"Gioseppo", name:"Zapato de salón", ref:"80301", type:"Efecto charol, tacón ancho", desc:"Zapato de salón de efecto charol con tacón ancho, cómodo y estable para caminar. Planta acolchada de piel y suela de caucho que agarra bien.", tags:["Tacón ancho"], price:"59,95", colors:[
+    {color:"Negro", img:"img/prod/gio-80301-negro.jpg"},
+    {color:"Burdeos", img:"img/prod/gio-80301-burdeos.jpg"}]},
+  {who:"senora", brand:"Gioseppo", name:"Zapato plano con pulsera", ref:"80154", type:"Charol y grabado pitón", desc:"Bailarina de punta afilada que combina grabado de serpiente y charol. Lleva pulsera ajustable que sujeta bien el pie, una pequeña cuña interior para no ir del todo plana y planta acolchada.", tags:["Pulsera ajustable", "Planta acolchada"], price:"59,95", colors:[
+    {color:"Negro y pitón", img:"img/prod/gio-80154-negro-piton.jpg"}]},
+  {who:"senora", brand:"Gioseppo", name:"Caspian", ref:"76135", type:"Botín elástico de tacón kitten", desc:"Botín de caña elástica con detalles de charol, punta afilada y tacón kitten bajo. Lleva pulsera en el tobillo, plantilla acolchada y suela de caucho flexible.", tags:["Tacón bajo", "Elástico"], price:"69,95", colors:[
+    {color:"Negro", img:"img/prod/gio-76135-negro.jpg"}]},
+  {who:"senora", brand:"Gioseppo", name:"Zapatilla retro", ref:"80669", type:"Piel y terciopelo", desc:"Zapatilla de serraje con tacto aterciopelado y suela de caucho con relieve que agarra bien. Plataforma baja con entresuela ligera, cordones para ajustarla y plantilla acolchada extraíble.", tags:["Ligera", "Plantilla extraíble"], price:"74,95", colors:[
+    {color:"Marrón", img:"img/prod/gio-80669-marron.jpg"}]},
+  {who:"senora", brand:"Gioseppo", name:"Zapatilla", ref:"80298", type:"Piel con estampado animal", desc:"Zapatilla de serraje y pelo con estampado de leopardo y detalles metalizados. Su plantilla extraíble se adapta al pie y reparte el peso de forma uniforme al caminar.", tags:["Plantilla extraíble", "Piel"], price:"89,95", colors:[
+    {color:"Beige", img:"img/prod/gio-80298-beige.jpg"}]},
+  {who:"senora", brand:"Gioseppo", name:"Bota alta elástica", ref:"80124", type:"Tejido elástico y tacón carey", desc:"Bota alta de caña elástica, muy suave y flexible, que se adapta bien a la pierna. Punta cuadrada y tacón ancho efecto carey, cómodo y estable. Plantilla acolchada y planta de piel.", tags:["Caña elástica", "Tacón ancho"], price:"89,95", colors:[
+    {color:"Negro", img:"img/prod/gio-80124-negro.jpg"}]},
+  {who:"senora", brand:"Imac", name:"Botín con hebilla", ref:"207000", type:"Piel, cuña y plantilla extraíble", desc:"Botín de piel de diseño italiano, con una cuña ligera que da la inclinación justa para caminar con comodidad. Forro transpirable, interior acolchado, hebilla decorativa y plantilla extraíble.", tags:["Piel", "Plantilla extraíble"], price:"84,95", colors:[
+    {color:"Negro", img:"img/prod/imac-20700-negro.jpg"}]},
+  {who:"senora", brand:"Imac", name:"Botín térmico waterproof", ref:"206308", type:"Impermeable, con borreguito y plantilla extraíble", desc:"Botín de invierno impermeable gracias al sistema Imactex, que mantiene el pie seco en días de lluvia. Combina piel y tejido acolchado, con cuello de pelo que abriga, suela gruesa con buen agarre y plantilla extraíble.", tags:["Waterproof", "Abrigado"], price:"84,95", colors:[
+    {color:"Negro", img:"img/prod/imac-206308-negro.jpg"}]},
+  {who:"senora", brand:"Imac", name:"Botín térmico waterproof", ref:"206309", type:"Impermeable, con borreguito y plantilla extraíble", desc:"Botín de invierno impermeable gracias al sistema Imactex, que mantiene el pie seco en días de lluvia. Combina piel y tejido acolchado, con cuello de pelo que abriga, suela gruesa con buen agarre y plantilla extraíble.", tags:["Waterproof", "Abrigado"], price:"84,95", colors:[
+    {color:"Camel", img:"img/prod/imac-206309-camel.jpg"}]},
+  {who:"senora", brand:"Imac", name:"Zapato de salón con cuña", ref:"855440", type:"Plantilla extraíble", desc:"Zapato de salón con cuña, sencillo y elegante, fácil de combinar a diario o para vestir. Interior suave con plantilla acolchada y extraíble que amortigua la pisada, y suela ligera, flexible y antideslizante.", tags:["Antideslizante", "Plantilla extraíble"], price:"59,00", colors:[
+    {color:"Burdeos charol", img:"img/prod/imac-855440-burdeos.jpg"},
+    {color:"Negro piel", img:"img/prod/imac-855440-negro.jpg"}]},
+  {who:"senora", brand:"Imac", name:"Mocasín de licra", ref:"858210", type:"Elástico, con plataforma y plantilla extraíble", desc:"Mocasín de tejido elástico que se adapta al pie y se pone y se quita con facilidad, con adorno de eslabón en el empeine. Cuña de plataforma ligera con suela de goma, cómoda para caminar, y plantilla extraíble.", tags:["Fácil de calzar", "Elástico"], price:"69,00", colors:[
+    {color:"Negro", img:"img/prod/imac-858210-negro.jpg"}]},
+  {who:"caballero", brand:"Imac", name:"Bota de cordones waterproof", ref:"201288", type:"Piel, impermeable y plantilla extraíble", desc:"Bota de piel al tobillo, de estilo desert, con cierre de cordones. Waterproof y pensada para el invierno, con plantilla extraíble.", tags:["Waterproof", "Plantilla extraíble"], price:"89,95", colors:[
+    {color:"Marrón", img:"img/prod/imac-201288-marron.jpg"}]},
+  {who:"caballero", brand:"Imac", name:"Mocasín horma ancha", ref:"201430", type:"Piel y plantilla extraíble", desc:"Mocasín deportivo de piel con horma ancha y suela de goma plana, cómodo para el invierno. Lleva plantilla extraíble.", tags:["Horma ancha", "Plantilla extraíble"], price:"75,00", colors:[
+    {color:"Negro", img:"img/prod/imac-201430-negro.jpg"}]},
+  {who:"caballero", brand:"Imac", name:"Zapato de cordones horma ancha", ref:"201449", type:"Serraje, waterproof y plantilla extraíble", desc:"Zapato plano de cordones en serraje, versátil y ligero, con horma ancha. Waterproof y con plantilla extraíble.", tags:["Horma ancha", "Waterproof"], price:"79,95", colors:[
+    {color:"Marrón", img:"img/prod/imac-201449-v2.jpg"}]},
+  {who:"caballero", brand:"Imac", name:"Zapato clásico de cordones", ref:"851000", type:"Piel y plantilla extraíble", desc:"Zapato clásico de piel con cordones y forro de piel. Suela de goma dentada, ligera y flexible, y plantilla acolchada extraíble.", tags:["Piel", "Plantilla extraíble"], price:"89,00", colors:[
+    {color:"Negro", img:"img/prod/imac-851000-v2.jpg"}]},
+  {who:"senora", brand:"Daniela Vega", name:"Zapato de salón", ref:"2333V", type:"Ante, punta fina y tacón bajo", desc:"Zapato de salón de ante con punta fina y tacón bajo y ancho, que da estabilidad y permite llevarlo con comodidad durante horas. Elegante para una ocasión especial y fácil de combinar en el día a día.", tags:["Tacón bajo","Tacón ancho"], price:"54,95", colors:[
+    {color:"Negro", img:"img/prod/dv-2333v-negro.jpg"},
+    {color:"Marrón", img:"img/prod/dv-2333v-marron.jpg"}]},
+  {who:"senora", brand:"Daniela Vega", name:"Botín elástico", ref:"2477V", type:"Licra, punta fina y tacón bajo", desc:"Botín de licra elástica que se adapta bien al pie y estiliza la figura, con un estampado de leopardo discreto, en tono sobre tono. Su tacón bajo y ancho da la altura justa con estabilidad, así que sirve tanto para una ocasión especial como para el día a día. Queda bien con pantalón o falda y combina con casi todo.", tags:["Tacón bajo","Elástico"], price:"65,00", colors:[
+    {color:"Leopardo negro", img:"img/prod/dv-2477v-leopardo-v2.jpg"}]},
+  {who:"senora", brand:"Suave", name:"Zapato de cordones con cremallera", ref:"3758", type:"Piel y plantilla extraíble", desc:"Deportivo de piel con cordones para ajustarlo bien y cremallera lateral para calzarlo sin esfuerzo. Plantilla extraíble anatómica y transpirable, y suela cómoda de poca altura.", tags:["Cremallera", "Plantilla extraíble"], price:"87,00", colors:[
+    {color:"Bronce", img:"img/prod/suave-3758-bronce.jpg"}]},
+  {who:"senora", brand:"Suave", name:"Zapato de cordones", ref:"3413", type:"Piel grabada y plantilla extraíble", desc:"Zapato de piel muy cómodo, con horma ancha que deja espacio al pie y no aprieta. Suela de goma antideslizante para caminar con seguridad y plantilla extraíble, ideal para quien usa plantilla propia. Cierre de cordones para ajustarlo a cada pie.", tags:["Horma ancha", "Antideslizante"], price:"78,00", colors:[
+    {color:"Burdeos", img:"img/prod/suave-3413-burdeos.jpg"}]},
+  {who:"senora", brand:"Suave", name:"Zapato con velcro", ref:"3416", type:"Piel y plantilla extraíble", desc:"Zapato de piel con velcro ancho que sujeta bien el pie y se abre y cierra con facilidad. Plantilla extraíble anatómica y transpirable, y suela con un poco de altura que resulta cómoda al caminar.", tags:["Velcro", "Plantilla extraíble"], price:"89,00", colors:[
+    {color:"Beige", img:"img/prod/suave-3416-beige-v2.jpg"}]},
+  {who: "senora", brand: "Chika10", line: "Renature", name: "Jacaranda", ref: "08", type: "Botín plano con doble cremallera", desc: "Botín plano de piel con diseño limpio y suela ligera de volumen moderno. Caña ancha y ajuste flexible para llevarlo cómodo todo el día. Un estilo urbano y actual para el día a día.", tags: ["Plano", "Doble cremallera"], price: "79,99", colors: [{"color": "Negro", "img": "img/prod/ck-jacaranda-negro.jpg"}, {"color": "Taupe", "img": "img/prod/ck-jacaranda-taupe.jpg"}]},
+  {who: "senora", brand: "Chika10", line: "Renature", name: "Nenúfar", ref: "02", type: "Botín de medio tacón", desc: "Botín de piel de silueta recta y tacón ancho, con caña estructurada y apertura lateral que estiliza. Cómodo y elegante, un básico para el día a día.", tags: ["Tacón ancho", "Doble cremallera"], price: "89,99", colors: [{"color": "Marrón", "img": "img/prod/ck-nenufar-marron.jpg"}]},
+  {who: "senora", brand: "Chika10", name: "Baiden", ref: "16", type: "Botín de medio tacón", desc: "Botín de tacón medio y silueta limpia, con una tira decorativa con hebilla metálica en el lateral. Un detalle que le da un toque especial y combina con todo.", tags: ["Tacón ancho", "Cremallera"], price: "59,99", colors: [{"color": "Marrón", "img": "img/prod/ck-baiden-marron.jpg"}]},
+  {who: "senora", brand: "Chika10", name: "Miley", ref: "01", type: "Zapato plano de cordones", desc: "Zapato plano de piel tipo mocasín, con cordones, costuras marcadas y abalorios decorativos. Casual con aire clásico, cómodo y con un toque de personalidad para el día a día.", tags: ["Plano", "Piel"], price: "65,99", colors: [{"color": "Marrón", "img": "img/prod/ck-miley-marron.jpg"}, {"color": "Kaki", "img": "img/prod/ck-miley-kaki.jpg"}]},
+  {who: "senora", brand: "Chika10", name: "Urquijo", ref: "03", type: "Bota alta de medio tacón", desc: "Bota de caña alta con detalle metalizado, puntera redondeada y tacón ancho que da comodidad y estabilidad. Elegante y práctica, con un punto sofisticado.", tags: ["Tacón ancho"], price: "69,99", colors: [{"color": "Marrón", "img": "img/prod/ck-urquijo-marron.jpg"}, {"color": "Negro", "img": "img/prod/ck-urquijo-negro.jpg"}]},
+  {who: "senora", brand: "Chika10", name: "Baiden", ref: "17", type: "Bota alta de medio tacón", desc: "Bota de caña alta con tacón medio y silueta limpia, con una tira decorativa con hebilla metálica en el lateral. Un detalle que le da un toque especial y combina con todo.", tags: ["Tacón ancho", "Cremallera"], price: "69,99", colors: [{"color": "Marrón", "img": "img/prod/ck-bota-marron.jpg"}]},
+  {who:"senora", brand:"BBUP", name:"Bota alta con hebilla", ref:"2720", type:"Bota alta de tacón bajo", desc: "Bota alta de estilo ecuestre hasta la rodilla, de silueta estructurada y punta redonda. Tacón bajo y estable para llevarla todo el día, tirador trasero para calzarla con facilidad y correa cruzada en el tobillo con detalle metálico.", tags:["Tacón bajo"], price:"59,95", colors:[{color:"Negro", img:"img/prod/bb-2720-negro-v3.jpg"}]},
+  {who:"senora", brand:"BBUP", name:"Botín cowboy con tachas", ref:"2640", type:"Botín cowboy de tacón", desc: "Botín de horma cowboy con punta afilada, costuras western en el empeine y finas tachas metálicas en el borde de la caña. Tacón medio ancho, estable y cómodo durante horas, con cremallera interior para calzarlo con facilidad.", tags:["Tacón ancho", "Cremallera"], price:"54,95", colors:[{color:"Negro", img:"img/prod/bb-2640-negro.jpg"}]},
+  {who:"senora", brand:"BBUP", name:"Botín cowboy con tachas", ref:"2763", type:"Botín cowboy de tacón bajo", desc: "Botín de horma cowboy en efecto ante, con punta afilada, bordados de motivo western y tachas metálicas por la caña y el empeine. Tacón bajo y estable, cómodo para todo el día, con cremallera interior para calzarlo con facilidad.", tags:["Tacón ancho", "Cremallera"], price:"54,95", colors:[{color:"Negro", img:"img/prod/bb-2763-negro.jpg"}]},
+  {who:"senora", brand:"BBUP", name:"Zapatilla barefoot", ref:"2702", barefoot:true, type:"Zapatilla barefoot acolchada", desc: "Zapatilla alta barefoot con paneles acolchados efecto plumífero y acabado efecto ante en puntera y talón. Flexible y con puntera ancha para que los dedos se muevan con libertad, sobre una suela anatómica. Cordones y tirador trasero.", tags:["Barefoot", "Cremallera", "Puntera ancha"], price:"54,95", colors:[{color:"Negro y metalizado", img:"img/prod/bb-2702-negro.jpg"}, {color:"Multicolor", img:"img/prod/bb-2702-multi.jpg"}, {color:"Beige y metalizado", img:"img/prod/bb-2702-beige.jpg"}]},
+  {who:"senora", brand:"BBUP", name:"Botín de medio tacón", ref:"2714", type:"Botín de medio tacón", desc: "Botín de caña corta y ajustada con punta cuadrada y línea limpia. Tacón cómodo para todo el día y cremallera interior para calzarlo con facilidad. Un básico versátil que combina con todo.", tags:["Cremallera"], price:"54,95", colors:[{color:"Negro", img:"img/prod/bb-2714-negro.jpg"}, {color:"Burdeos", img:"img/prod/bb-2714-burdeos.jpg"}]},
+  {who:"senora", brand:"Carmela", name:"Bota cowboy", ref:"164255", type:"Bota de caña media de serraje", desc: "Bota de caña media en serraje suave, con detalle lateral de pequeñas tachuelas metálicas. Suela resistente y flexible, cómoda para el día a día, y plantilla extraíble.", tags:["Piel", "Tacón ancho", "Plantilla extraíble"], price:"99,95", colors:[{color:"Marrón", img:"img/prod/cm-164255-marron.jpg"}, {color:"Beige", img:"img/prod/cm-164255-beige.jpg"}]},
+  {who:"senora", brand:"Carmela", name:"Botín cowboy con tachas", ref:"164248", type:"Botín de serraje con tacón", desc: "Botín de serraje suave con detalle lateral de pequeñas tachuelas metálicas. Suela resistente y flexible, cómoda para el día a día, y plantilla extraíble.", tags:["Piel", "Tacón ancho", "Plantilla extraíble"], price:"99,95", colors:[{color:"Marrón", img:"img/prod/cm-164248-marron.jpg"}]},
+  {who:"senora", brand:"Carmela", name:"Zapatilla plana", ref:"162531", type:"Zapatilla de piel", desc: "Zapatilla de piel con cordones y cremallera lateral para un buen ajuste, y tirador trasero para calzarla con facilidad. Suela dentada antideslizante que da estabilidad y seguridad al caminar.", tags:["Plano", "Piel", "Cremallera", "Antideslizante"], price:"89,95", colors:[{color:"Marrón", img:"img/prod/cm-162531-marron.jpg"}]},
+  {who:"senora", brand:"Carmela", name:"Deportivo con cremallera", ref:"164221", type:"Deportivo de piel", desc: "Zapatilla de piel con materiales combinados, cremallera lateral y cordones ajustables. Plantilla extraíble muy cómoda y suela gruesa dentada antideslizante.", tags:["Cremallera", "Piel", "Antideslizante", "Plantilla extraíble"], price:"89,95", colors:[{color:"Beige y marrón", img:"img/prod/cm-164221-beige-v2.jpg"}]},
+  {who:"senora", brand:"24 Hrs", name:"Botín con cuña", ref:"26958", type:"Botín de piel con cremallera", desc: "Botín de piel con cremallera y elástico lateral que facilita el calce, tirador trasero y costuras decorativas. Suela de plataforma dentada y ultraligera, que da altura sin perder comodidad.", tags:["Piel", "Cremallera", "Ligera"], price:"135,90", colors:[{color:"Negro", img:"img/prod/h24-26958-negro.jpg"}]},
+  {who:"senora", brand:"24 Hrs", name:"Botín chelsea", ref:"26984", type:"Botín de piel combinada con tacón", desc: "Botín de piel combinada con acabado efecto animal, puntera redonda y elásticos laterales para calzarlo con facilidad. Lleva tirador trasero y suela dentada ultraligera con tacón. Diseño y fabricación española.", tags:["Piel", "Tacón ancho", "Elástico", "Ligera"], price:"135,90", colors:[{color:"Marrón y leopardo", img:"img/prod/h24-26984-marron.jpg"}]},
+  {who:"senora", brand:"24 Hrs", name:"Sneaker", ref:"27006", type:"Deportivo de piel combinada", desc: "Sneaker de piel con acabados charol y metalizado, cordones elásticos y costuras vistas. Suela dentada ultraligera con algo de altura y plantilla extraíble. Diseño y fabricación española.", tags:["Piel", "Elástico", "Ligera", "Plantilla extraíble"], price:"129,90", colors:[{color:"Bronce", img:"img/prod/h24-27006-bronce.jpg"}]},
+  {who:"senora", brand:"Fly Flot", name:"Zapato elástico", ref:"20-27X54", type:"Zapato con banda elástica", desc: "Zapato sin cordones de microfibra elástica, con banda elástica ancha en el empeine que se adapta al pie y facilita el calce. Plantilla extraíble con memoria de forma, tirador trasero y suela anatómica antideslizante que amortigua la pisada.", tags:["Elástico", "Fácil de calzar", "Plantilla extraíble", "Antideslizante"], price:"59,95", colors:[{color:"Negro", img:"img/prod/ff-2754-negro.jpg"}, {color:"Beige y negro", img:"img/prod/ff-2754-beige.jpg"}]},
+  {who:"senora", brand:"Fly Flot", name:"Zapato con velcro", ref:"20-47Z83", type:"Zapato con cierre de velcro", desc: "Zapato de microfibra elástica que se adapta al pie, con correa de velcro ajustable para calzarlo con facilidad. Plantilla con memoria de forma y suela con cuña baja, cómoda para todo el día.", tags:["Velcro", "Fácil de calzar", "Cuña baja"], price:"73,90", colors:[{color:"Bronce", img:"img/prod/ff-4783-bronce.jpg"}, {color:"Negro", img:"img/prod/ff-4783-negro.jpg"}]},
+  {who:"senora", brand:"Fly Flot", name:"Zapato de salón con cuña", ref:"20-18508", type:"Salón con cuña y elástico", desc: "Zapato de salón de microfibra elástica, con elástico ajustable en el empeine que se adapta al pie, y acabado que repele el agua. Plantilla extraíble con memoria de forma y suela de cuña cómoda y estable.", tags:["Cuña baja", "Elástico", "Plantilla extraíble"], price:"59,90", colors:[{color:"Negro", img:"img/prod/ff-18508-negro.jpg"}]},
+  {who:"senora", brand:"Cosdam", name:"Bota de casa con velcro", ref:"9220", type:"Zapatilla de casa tipo botín", desc: "Bota de casa de tejido jaspeado, con cierre de velcro que se ajusta y facilita el calce. Forro suave y calentito, y suela que no resbala. Cómoda para estar en casa en los días fríos.", tags:["Velcro", "Abrigado", "Antideslizante"], price:"29,95", colors:[{color:"Azul", img:"img/prod/cos-9220-azul.jpg"}]},
+  {who:"senora", brand:"Cosdam", name:"Zapatilla de casa", ref:"5118", type:"Zapatilla de casa de suapel", desc: "Zapatilla de casa destalonada en suapel, con forro de pelito suave y calentito. Cómoda, fácil de calzar y con suela que no resbala. Fabricada de forma artesanal en Arnedo (La Rioja).", tags:["Fácil de calzar", "Abrigado", "Antideslizante"], price:"24,95", colors:[{color:"Maquillaje", img:"img/prod/cos-5118-maquillaje-v2.jpg"}, {color:"Azul", img:"img/prod/cos-5118-azul-v2.jpg"}, {color:"Gris", img:"img/prod/cos-5118-gris.jpg"}]},
+  {who:"senora", brand:"Cosdam", line:"Biorelax", name:"Zapatilla de casa", ref:"13342", type:"Zapatilla de casa estampada", desc: "Zapatilla de casa destalonada de pelito estampado, suave y calentita por dentro. Cómoda, fácil de calzar y con suela que no resbala.", tags:["Fácil de calzar", "Abrigado", "Antideslizante"], price:"34,95", colors:[{color:"Kaki", img:"img/prod/cos-13342-kaki.jpg"}]},
+  {who:"senora", brand:"Cosdam", line:"Biorelax", name:"Zapatilla de casa", ref:"4542", type:"Zapatilla de casa estampada", desc: "Zapatilla de casa destalonada de pelito con estampado de estrellas, suave y calentita por dentro. Cómoda, fácil de calzar y con suela que no resbala.", tags:["Fácil de calzar", "Abrigado", "Antideslizante"], price:"34,95", colors:[{color:"Beige", img:"img/prod/cos-4542-beige.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Zamora", ref:"W03-9787", type:"Bota de caña media", desc:"Bota de caña media en piel con efecto arrugado y hebilla decorativa. Su tacón estiliza sin perder comodidad, y lleva cremallera y planta interior acolchada. Un modelo con personalidad que combina con todo.", tags:["Piel", "Tacón ancho"], price:"159,95", colors:[{color:"Cuero", img:"img/prod/pk-9787-cuero.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Viana", ref:"W7C-8582C1", type:"Botín deportivo extra ligero", desc:"Botín deportivo de aire retro con piso fino bicolor y cierre de cordones. Interior acolchado y plantilla extraíble con extra de acolchado en arco y talón, que permite usar una plantilla propia. Ligero y cómodo para el día a día.", tags:["Ligera", "Piel", "Plantilla extraíble"], price:"119,95", colors:[{color:"Arcilla", img:"img/prod/pk-8582-arcilla.jpg"}, {color:"Nata", img:"img/prod/pk-8582-nata.jpg"}, {color:"Brandy", img:"img/prod/pk-8582-brandy.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Puertollano", ref:"W3C-8911", type:"Botín plano con detalle metálico", desc:"Botín plano de piel suave y brillante, con puntera almendrada y un detalle metalizado en el lateral. Lleva cremallera interior y planta acolchada para pisar cómodo todo el día. Un básico con personalidad, fácil de combinar.", tags:["Plano", "Piel"], price:"129,95", colors:[{color:"Negro", img:"img/prod/pk-8911-negro.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Puertollano", ref:"W3C-8913", type:"Botín plano con cordones", desc:"Botín plano de piel suave y brillante, con puntera almendrada. Se cierra con cordones y cremallera interior, para un ajuste cómodo y práctico, y lleva planta acolchada. Un básico versátil para cualquier look.", tags:["Plano", "Piel"], price:"139,95", colors:[{color:"Cuero", img:"img/prod/pk-8913-cuero.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Puertollano", ref:"W3C-9632", type:"Bota alta plana", desc:"Bota alta plana de piel, un básico clásico y fácil de combinar. Lleva pequeñas hebillas decorativas en el lateral, al estilo de las botas de montar, y cremallera para calzarla con facilidad.",  tags:["Plano", "Piel"], price:"189,95", colors:[{color:"Negro", img:"img/prod/pk-9632-negro.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Calafat", ref:"W1Z-8914", type:"Botín de tacón con hebilla", desc:"Botín de piel con punta semirredonda y hebilla decorativa en tono metalizado. Su tacón bajo y ancho da estabilidad, y la cremallera interior facilita el calce. Elegante, cómodo y fácil de llevar a diario.", tags:["Piel", "Tacón ancho"], price:"129,95", colors:[{color:"Granate", img:"img/prod/pk-x3-marron.jpg"}, {color:"Negro", img:"img/prod/pk-x4-negro.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Vigo", ref:"W3W-6979", type:"Zapato casual de cordones y cremallera", desc:"Zapato casual de piel suave y brillante, con horma amplia y punta redondeada. Se cierra con cordones y cremallera, que facilita el calce, y lleva suela extra ligera y antideslizante con plantilla extraíble acolchada.", tags:["Cremallera", "Piel", "Horma ancha", "Plantilla extraíble"], price:"109,95", colors:[{color:"Brandy", img:"img/prod/pk-zip-brandy.jpg"}, {color:"Arcilla", img:"img/prod/pk-zip-burdeos.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Málaga", ref:"W6W-8950", type:"Botín de tacón medio", desc:"Botín de caña baja con tacón medio y puntera almendrada. Lleva cremallera interior para calzarlo con facilidad y un detalle cosido en piel sobre el tacón. Un básico versátil y elegante para el día a día.", tags:["Piel", "Tacón ancho"], price:"129,95", colors:[{color:"Caoba", img:"img/prod/pk-8950-caoba.jpg"}, {color:"Negro", img:"img/prod/pk-8950-negro.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Segovia", ref:"W5P-8978", type:"Botín deportivo extra ligero", desc:"Botín deportivo de piel suave y luminosa, con cordones y cremallera interior que facilita el calce. Su piso extra ligero, dentado y con una ligera cuña, da estabilidad y flexibilidad, y lleva plantilla extraíble acolchada.", tags:["Ligera", "Piel", "Plantilla extraíble"], price:"129,95", colors:[{color:"Marfil", img:"img/prod/pk-8978-marfil.jpg"}, {color:"Brandy", img:"img/prod/pk-8978-brandy.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Segovia", ref:"W5P-6884C1", type:"Deportivo extra ligero elástico", desc:"Deportivo de piel suave y luminosa con cordones elásticos que facilitan el calce. Su piso extra ligero, dentado y con una ligera cuña, da estabilidad y flexibilidad, y lleva plantilla extraíble acolchada.", tags:["Ligera", "Fácil de calzar", "Plantilla extraíble"], price:"119,95", colors:[{color:"Nata", img:"img/prod/pk-6878-nata.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Viana", ref:"W7C-6918C1", type:"Deportivo con suela fina", desc:"Deportivo de estilo minimalista con piso fino bicolor y cordones elásticos regulables. Interior acolchado y plantilla extraíble con extra de acolchado en arco y talón, que permite usar una plantilla propia. Ligero y cómodo para el día a día.", tags:["Piel", "Plantilla extraíble"], price:"109,95", colors:[{color:"Brandy", img:"img/prod/pk-6918-brandy.jpg"}]},
+  {who:"senora", brand:"Pikolinos", name:"Daroca", ref:"W1U-8901C1", type:"Botín de tacón con cremallera", desc:"Botín clásico de piel con tacón medio y puntera almendrada. Lleva cremallera interior para calzarlo con facilidad y planta acolchada para una pisada suave. Un básico versátil para cualquier ocasión.", tags:["Cremallera", "Tacón ancho"], price:"129,95", colors:[{color:"Caoba", img:"img/prod/pk-8901-caoba.jpg"}]},
+  {who: "senora", brand: "Refresh", name: "Botín de tacón con tachuelas", ref: "176255", type: "Botín de tacón", desc: "Botín de antelina con caña fruncida y tachuelas en la parte superior, y cordones entrelazados detrás que le dan un aire boho. Tacón ancho de altura media y suela de goma para más comodidad y estabilidad. Lleva plantilla extraíble.", tags: ["Tachuelas", "Cordón trasero", "Plantilla extraíble"], price: "59,95", colors: [{color: "Marrón", img: "img/prod/rf-6255-marron.jpg"}, {color: "Taupe", img: "img/prod/rf-6255-taupe.jpg"}]},
+  {who: "senora", brand: "Refresh", name: "Botín con tacón bajo", ref: "176283", type: "Botín de tacón bajo", desc: "Botín de antelina suave con cremallera interior y otra cremallera exterior decorativa. Tacón ancho de altura media y suela dentada que dan comodidad y estabilidad. Lleva plantilla extraíble.", tags: ["Cremallera", "Tacón ancho", "Plantilla extraíble"], price: "49,95", colors: [{color: "Marrón", img: "img/prod/rf-6283-marron.jpg"}]},
+  {who: "senora", brand: "Refresh", name: "Bota de caña", ref: "173021", type: "Bota de caña media", desc: "Bota de antelina suave con cremallera interior y tirador lateral para calzarla con facilidad. Suela de tacos antideslizante con tacón y plataforma, y plantilla extraíble. Sin materiales de origen animal (certificado vegano PETA).", tags: ["Tacón ancho", "Suela de tacos", "Antideslizante", "Plantilla extraíble", "Vegana"], price: "59,95", colors: [{color: "Beige", img: "img/prod/rf-3021-beige.jpg"}, {color: "Negro", img: "img/prod/rf-3021-negro.jpg"}]},
+  {who: "senora", brand: "Refresh", name: "Botín de cuña", ref: "176174", type: "Botín de cuña", desc: "Botín de antelina suave con cremallera interior y otra cremallera exterior decorativa. Su cuña con suela dentada da comodidad y estabilidad para el día a día. Lleva plantilla extraíble.", tags: ["Cuña", "Cremallera", "Plantilla extraíble"], price: "59,95", colors: [{color: "Taupe", img: "img/prod/rf-6174-taupe.jpg"}]},
+  {who: "senora", brand: "Refresh", name: "Bota de tacón", ref: "176256", type: "Bota alta de tacón", desc: "Bota de caña alta en antelina, fruncida y con tachuelas en la parte superior, y cordones entrelazados en el lateral que le dan un aire boho. Tacón ancho de altura media y suela de goma para más comodidad y estabilidad. Lleva plantilla extraíble.", tags: ["Tachuelas", "Cordón trasero", "Tacón ancho", "Plantilla extraíble"], price: "69,95", colors: [{color: "Marrón", img: "img/prod/rf-6256-marron.jpg"}, {color: "Taupe", img: "img/prod/rf-6256-taupe.jpg"}]},
+  {who: "senora", brand: "Refresh", name: "Zapatilla de cuña con cordones", ref: "176177", type: "Zapatilla de cuña", desc: "Zapatilla de materiales que imitan la piel, con piezas de textura efecto serpiente. Cremallera lateral y cordones regulables para un buen ajuste, tirador trasero y plantilla extraíble. Suela de goma con volumen, cómoda y estable. Sin materiales de origen animal (certificado vegano PETA).", tags: ["Cuña", "Cremallera", "Plantilla extraíble", "Vegana"], price: "49,95", colors: [{color: "Camel", img: "img/prod/rf-6177-camel.jpg"}, {color: "Burdeos", img: "img/prod/rf-6177-burdeos.jpg"}]},
+  {who: "senora", brand: "Refresh", name: "Zapatilla plana de cordones", ref: "176105", type: "Zapatilla plana", desc: "Zapatilla de materiales que imitan la piel, combinados con antelina y detalles de charol. Cremallera lateral y cordones regulables para un buen ajuste, y suela ligera de goma, cómoda y estable. Sin materiales de origen animal (certificado vegano PETA).", tags: ["Cremallera", "Ligera", "Vegana"], price: "49,95", colors: [{color: "Taupe", img: "img/prod/rf-6105-taupe-v2.jpg"}]},
+  {who: "senora", brand: "Refresh", name: "Zapatilla alta de cordones", ref: "172303", type: "Zapatilla alta", desc: "Zapatilla alta de antelina con cremallera interior y cordones regulables. Suela de goma cómoda y antideslizante. Sin materiales de origen animal (certificado vegano PETA).", tags: ["Cremallera", "Plataforma", "Antideslizante", "Vegana"], price: "39,95", colors: [{color: "Taupe", img: "img/prod/rf-2303-taupe.jpg"}, {color: "Kaki", img: "img/prod/rf-2303-beige.jpg"}, {color: "Negro", img: "img/prod/rf-2303-negro.jpg"}]},
+  {who: "senora", brand: "Refresh", name: "Deportiva de licra", ref: "176013", type: "Deportiva plana de licra", desc: "Deportiva de tejido de una sola pieza, ligera y transpirable, con cierre de cordones. Suela ligera de perfil dinámico que acompaña la pisada, y plantilla extraíble. Sin materiales de origen animal (certificado vegano PETA).", tags: ["Plano", "Licra", "Ligera", "Plantilla extraíble", "Vegana"], price: "39,95", colors: [{color: "Negro", img: "img/prod/rf-6013-negro.jpg"}]},
+  {who: "caballero", brand: "Refresh", name: "Bota de cordones", ref: "176716", type: "Bota de cordones", desc: "Bota de cordones de estilo casual, en material efecto ante y con cuello de tejido. Forro textil suave y cómodo, y suela plana y resistente que da estabilidad en cada paso. Sin materiales de origen animal.", tags: ["Plano", "Cordones", "Vegana"], price: "49,95", colors: [{color: "Camel", img: "img/prod/rf-6716-camel.jpg"}, {color: "Taupe", img: "img/prod/rf-6716-taupe.jpg"}]},
+  {who: "caballero", brand: "Callaghan", name: "Zapato de cordones", ref: "60810", type: "Zapato deportivo de cordones", desc: "Zapato deportivo de piel natural con cierre de cordones. Suela extraligera y flexible que amortigua la pisada, y plantilla extraíble. Su horma se adapta al pie, que se ensancha un poco al caminar.", tags: ["Piel", "Ligera", "Plantilla extraíble"], price: "119,90", colors: [{color: "Azul", img: "img/prod/cg-60810-azul.jpg"}, {color: "Marrón", img: "img/prod/cg-60810-marron.jpg"}]},
+  {who: "caballero", brand: "Callaghan", name: "Mocasín", ref: "60801", type: "Mocasín con elásticos", desc: "Mocasín de piel natural con elásticos laterales para calzarlo con facilidad. Suela extraligera y flexible que amortigua la pisada, y plantilla extraíble. Su horma se adapta al pie, que se ensancha un poco al caminar.", tags: ["Elástico", "Fácil de calzar", "Ligera", "Plantilla extraíble"], price: "119,90", colors: [{color: "Marrón", img: "img/prod/cg-60801-marron.jpg"}]},
+  {who: "caballero", brand: "Callaghan", name: "Bota de cordones", ref: "60808", type: "Bota de cordones", desc: "Bota de piel natural con cierre de cordones. Suela extraligera y flexible que amortigua la pisada, y plantilla extraíble. Su horma se adapta al pie, que se ensancha un poco al caminar.", tags: ["Piel", "Ligera", "Plantilla extraíble"], price: "125,00", colors: [{color: "Marrón", img: "img/prod/cg-60808-marron.jpg"}]},
+  {who: "caballero", brand: "Dockers", name: "Zapato barefoot de cordones", ref: "59LE001", type: "Zapato deportivo barefoot", desc: "Zapato barefoot de material sintético fácil de limpiar, con forro textil transpirable y cierre de cordones. Suela muy flexible y con buen agarre, plantilla extraíble y resistencia a la humedad.", tags: ["Barefoot", "Puntera ancha", "Plantilla extraíble"], price: "69,95", colors: [{color: "Cuero", img: "img/prod/dk-59le001-cuero.jpg"}], barefoot: true},
+  {who: "caballero", brand: "Dockers", name: "Zapato barefoot", ref: "57YN001", type: "Zapato deportivo barefoot", desc: "Zapato barefoot de estética deportiva y diseño ergonómico, con suela fina y flexible y cierre de cordones. Informal y cómodo para el día a día.", tags: ["Barefoot", "Puntera ancha"], price: "69,95", colors: [{color: "Marrón", img: "img/prod/dk-57yn001-marron.jpg"}], barefoot: true},
+  {who: "caballero", brand: "Dockers", name: "Bota barefoot", ref: "57YN003", type: "Bota de cordones barefoot", desc: "Bota tobillera barefoot de material sintético efecto nobuck, ligera y con puntera amplia que deja el pie moverse con libertad. Forro textil con membrana impermeable, cordones planos, refuerzo trasero en el tobillo y suela de goma flexible.", tags: ["Barefoot", "Puntera ancha", "Waterproof"], price: "69,95", colors: [{color: "Marrón", img: "img/prod/dk-57yn003-marron.jpg"}], barefoot: true},
+  {who: "caballero", brand: "Cosdam", line: "Biorelax", name: "Zapatilla de casa", ref: "1448", type: "Zapatilla de casa acolchada", desc: "Zapatilla de casa destalonada con exterior acolchado y forro de pelito suave y calentito. Cómoda, fácil de calzar y con suela que no resbala.", tags: ["Fácil de calzar", "Abrigado", "Antideslizante"], price: "32,95", colors: [{color: "Azul", img: "img/prod/cd-1448-azul.jpg"}]},
+  {who: "caballero", brand: "Pikolinos", name: "York", ref: "M2D-8156C1", type: "Bota de cordones", desc: "Bota de piel de aire casual con cordones y cremallera, fácil de calzar y de ajustar al pie. Plantilla extraíble y planta cómoda para caminar a diario.", tags: ["Piel", "Cremallera", "Plantilla extraíble"], price: "139,95", colors: [{color: "Marrón", img: "img/prod/pkm-8156-marron.jpg"}]},
+  {who: "caballero", brand: "Pikolinos", name: "Aranjuez", ref: "U9F-8055C1", type: "Bota barefoot de cordones", desc: "Bota barefoot de piel con horma amplia y sin drop, que deja mover libremente los dedos. Piso muy ligero de goma natural, totalmente flexible y sin contrafuerte en el talón. Incluye una plantilla de adaptación que se puede quitar cuando el pie se acostumbra.", tags: ["Barefoot", "Puntera ancha", "Plantilla extraíble"], price: "139,95", colors: [{color: "Marrón", img: "img/prod/pkm-8055-marron.jpg"}], barefoot: true},
+  {who: "caballero", brand: "Pikolinos", name: "Bilbao", ref: "M8D-8050C1", type: "Botín de cordones", desc: "Botín de piel con cordones y cremallera para calzarlo y ajustarlo con facilidad. Suela extra ligera y plantilla extraíble transpirable.", tags: ["Piel", "Ligera", "Cremallera", "Plantilla extraíble"], price: "129,95", colors: [{color: "Marrón", img: "img/prod/pkm-8050-marron.jpg"}]},
+  {who: "caballero", brand: "Pikolinos", name: "Bota de cordones", ref: "M3M-8107", type: "Bota de cordones", desc: "Botín de piel con cordones y cremallera, fácil de calzar. De estilo casual y pensado para los días fríos, con plantilla extraíble.", tags: ["Piel", "Suela de tacos", "Cremallera", "Plantilla extraíble"], price: "129,95", colors: [{color: "Marrón", img: "img/prod/pkm-8107-marron.jpg"}]},
+  {who: "caballero", brand: "Pikolinos", name: "Aranjuez", ref: "U9F-6363C1", type: "Zapato deportivo barefoot", desc: "Zapato barefoot de piel con horma amplia y sin drop, que deja mover libremente los dedos. Piso muy ligero de goma natural, totalmente flexible y sin contrafuerte en el talón. Incluye una plantilla de adaptación que se puede quitar cuando el pie se acostumbra. Validado por un centro de biomecánica y aceptado por la asociación de podólogos de Estados Unidos.", tags: ["Barefoot", "Puntera ancha", "Plantilla extraíble"], price: "129,95", colors: [{color: "Marrón", img: "img/prod/pkm-6363-marron.jpg"}], barefoot: true},
+  {who: "caballero", brand: "Pikolinos", name: "Aranda", ref: "M8R-6374C1", type: "Deportivo de cordones", desc: "Deportivo de piel de aire clásico con cordones y suela de volumen extra ligera. Plantilla extraíble acolchada, con extra de confort en arco y talón.", tags: ["Piel", "Ligera", "Plantilla extraíble"], price: "124,95", colors: [{color: "Beige", img: "img/prod/pkm-6374-beige.jpg"}]},
+  {who: "caballero", brand: "Pikolinos", name: "Alarcón", ref: "M7D-4289", type: "Zapato de cordones", desc: "Zapato de piel con cordones, suela extra ligera y plantilla acolchada para ir cómodo todo el día.", tags: ["Piel", "Ligera"], price: "99,95", colors: [{color: "Marrón", img: "img/prod/pkm-4289-marron.jpg"}]},
+  {who: "caballero", brand: "Pikolinos", name: "Berna", ref: "M8J-4331C1", type: "Zapato de cordones", desc: "Blucher clásico de piel suave y brillante, ligero y versátil. Plantilla extraíble acolchada, forro transpirable y suela bicolor antideslizante que amortigua cada paso.", tags: ["Piel", "Antideslizante", "Plantilla extraíble"], price: "99,95", colors: [{color: "Cuero", img: "img/prod/pkm-4331-cuero.jpg"}, {color: "Azul", img: "img/prod/pkm-4331-azul.jpg"}]},
+  {who: "caballero", brand: "Pikolinos", name: "Getafe", ref: "M2B-6439C1", type: "Deportivo de cordones", desc: "Deportivo de piel con cordones elásticos que facilitan el calce. Suela extra ligera y plantilla extraíble con extra de acolchado en arco y talón.", tags: ["Piel", "Ligera", "Fácil de calzar", "Plantilla extraíble"], price: "119,95", colors: [{color: "Cuero", img: "img/prod/pkm-6439-cuero.jpg"}]},
+];
+
+const VIEWS = {
+  senora:      {title:"Señora", intro:"Calzado cómodo de señora. Pulsa \"Pedir información\" y te contamos por WhatsApp tallas y colores.", filter:p => p.who === "senora" || p.who === "unisex", empty:"Muy pronto, nuevos modelos de señora."},
+  caballero:   {title:"Caballero", intro:"Calzado cómodo de caballero. Pulsa \"Pedir información\" y te contamos por WhatsApp tallas y colores.", filter:p => p.who === "caballero" || p.who === "unisex", empty:"Muy pronto, nuevos modelos de caballero."},
+  barefoot:    {title:"Barefoot", intro:"Calzado barefoot: horma ancha, suela plana y flexible, como andar descalzo. Te aconsejamos en tienda para acostumbrarte a ellos.", filter:p => p.barefoot, empty:"Muy pronto, más calzado barefoot."}
+};
+const WHO = {senora:"señora", caballero:"caballero", unisex:"unisex"};
+
+// Marcas de la tienda (para sus páginas). Las que aún no tienen modelos muestran "Muy pronto".
+const BRANDS = ["Pikolinos","Callaghan","Fluchos","El Naturalista","Carmela","Art","24 Hrs","Mustang","Gioseppo","Imac","Daniela Vega","Suave","Chika10","BBUP","Fly Flot","Cosdam","Luisetti","Refresh","Dockers"];
+const slug = t => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+
+const waIcon = '<svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>';
+const msgFor = (p, col) => `Hola, me interesa el modelo ${p.line || p.brand} ${p.name}${p.ref ? " ref. " + p.ref : ""} (${p.type.toLowerCase()}) en color ${col.color.toLowerCase()}${col.code ? " (" + col.code + ")" : ""}. ¿Me podéis dar más información?`;
+const card = (p, idx) => {
+  const n = p.colors.length, c0 = p.colors[0], who = WHO[p.who];
+  const nav = n > 1 ? `
+      <div class="cnav">
+        <button type="button" class="cbtn" data-dir="-1" aria-label="Color anterior">‹</button>
+        <span class="cname"><b>${c0.color}</b><small>1 de ${n}</small></span>
+        <button type="button" class="cbtn" data-dir="1" aria-label="Siguiente color">Siguiente ›</button>
+      </div>` : `<p class="cone">Color: <b>${c0.color}</b></p>`;
+  return `
+  <article class="prod" data-i="${idx}" data-c="0">
+    <div class="pic"><img class="main" src="${c0.img}" alt="${p.line || p.brand} ${p.name}, ${p.type.toLowerCase()} de ${who}, color ${c0.color.toLowerCase()}" loading="lazy"><span class="badges"><span class="badge">Nuevo</span>${n > 1 ? `<span class="ncol">${n} colores</span>` : ""}</span><button type="button" class="zbtn" aria-label="Ampliar foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg></button></div>
+    <div class="body">
+      ${p.tags ? `<div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>` : ""}
+      <span class="brand">${p.brand}${p.line ? " · " + p.line : ""} · ${who}</span>
+      <h3>${p.name}</h3>
+      <p class="type">${p.type}${p.ref ? ` <span class="ref">Ref. ${p.ref}</span>` : ""}</p>
+      <div class="prow">${p.price ? `<p class="price">${p.price} €</p>` : "<span></span>"}${p.desc ? `<button type="button" class="dbtn" aria-expanded="false">Ver descripción <span aria-hidden="true">▾</span></button>` : ""}</div>
+      ${p.desc ? `<p class="desc" hidden>${p.desc}</p>` : ""}
+      ${nav}
+      <a class="btn btn-wa js-wa" data-msg="${msgFor(p, c0)}" href="#visitanos">${waIcon} Pedir información</a>
+    </div>
+  </article>`;
+};
+
+const byBrand = list => [...new Set(list.map(([p]) => p.brand))].sort((a,b) => a.localeCompare(b, "es"));
+function renderCat(key) {
+  const v = VIEWS[key];
+  const list = PRODUCTS.map((p,i) => [p,i]).filter(([p]) => v.filter(p));
+  document.getElementById("c-crumbs").innerHTML = `<a href="#inicio">Inicio</a> › ${v.title}`;
+  document.getElementById("c-title").innerHTML = `${v.title} <small>${list.length ? list.length + (list.length === 1 ? " modelo" : " modelos") : ""}</small>`;
+  document.getElementById("c-intro").textContent = v.intro;
+  const brands = byBrand(list);
+  document.getElementById("c-list").innerHTML = list.length ? brands.map(br => {
+    const items = list.filter(([p]) => p.brand === br);
+    return `<div class="bgroup" data-brand="${br}"><h2 class="bhead"><a href="#marca-${slug(br)}">${br}</a> <small>${items.length === 1 ? "1 modelo" : items.length + " modelos"}</small></h2><div class="grid">${items.map(([p,i]) => card(p, i)).join("")}</div></div>`;
+  }).join("") : `<p class="empty">${v.empty}</p>`;
+  const bf = document.getElementById("bfilter");
+  bf.hidden = brands.length < 2;
+  bf.innerHTML = ["Todas las marcas", ...brands].map((b,i) => `<button type="button" class="bchip${i===0?" on":""}" data-brand="${i===0 ? "*" : b}" aria-pressed="${i===0}">${b}</button>`).join("");
+  wireWA(document.getElementById("c-list"));
+}
+function renderBrand(name) {
+  const list = PRODUCTS.map((p,i) => [p,i]).filter(([p]) => p.brand === name);
+  const lines = [...new Set(list.map(([p]) => p.line).filter(Boolean))];
+  document.getElementById("c-crumbs").innerHTML = `<a href="#inicio">Inicio</a> › <a href="#marcas">Marcas</a> › ${name}`;
+  document.getElementById("c-title").innerHTML = `${name} <small>${list.length ? list.length + (list.length === 1 ? " modelo" : " modelos") : ""}</small>`;
+  document.getElementById("c-intro").textContent = list.length
+    ? `Todos los modelos de ${name}${lines.length ? " (incluida " + lines.join(", ") + ")" : ""} que tenemos en tienda, separados en señora y caballero. Pregúntanos por WhatsApp tallas y colores.`
+    : `Muy pronto subiremos los modelos de ${name}. Mientras tanto, pregúntanos por WhatsApp o ven a verlos a la tienda.`;
+  const groups = [["senora","Señora"],["caballero","Caballero"],["unisex","Unisex"]].map(([k,t]) => [k, t, list.filter(([p]) => p.who === k)]).filter(g => g[2].length);
+  document.getElementById("c-list").innerHTML = groups.map(([k,t,items]) =>
+    `<div class="bgroup" data-brand="${k}"><h2 class="bhead">${t} <small>${items.length === 1 ? "1 modelo" : items.length + " modelos"}</small></h2><div class="grid">${items.map(([p,i]) => card(p, i)).join("")}</div></div>`).join("");
+  const bf = document.getElementById("bfilter");
+  bf.hidden = groups.length < 2;
+  bf.innerHTML = [["*","Todo"], ...groups.map(([k,t]) => [k,t])].map(([k,t],i) => `<button type="button" class="bchip${i===0?" on":""}" data-brand="${k}" aria-pressed="${i===0}">${t}</button>`).join("");
+  wireWA(document.getElementById("c-list"));
+}
+
+document.getElementById("bfilter").addEventListener("click", e => {
+  const b = e.target.closest(".bchip"); if (!b) return;
+  const sel = b.dataset.brand;
+  document.querySelectorAll("#bfilter .bchip").forEach(x => { const on = x === b; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
+  document.querySelectorAll("#c-list .bgroup").forEach(g => g.hidden = !(sel === "*" || g.dataset.brand === sel));
+});
+
+// Cambio de color en una tarjeta
+document.addEventListener("click", e => {
+  const b = e.target.closest(".prod .cbtn"); if (!b) return;
+  const el = b.closest(".prod"), p = PRODUCTS[+el.dataset.i];
+  const n = p.colors.length, c = (+el.dataset.c + +b.dataset.dir + n) % n, col = p.colors[c];
+  el.dataset.c = c;
+  const img = el.querySelector("img.main"); img.src = col.img; img.alt = `${p.line || p.brand} ${p.name}, color ${col.color.toLowerCase()}`;
+  el.querySelector(".cname").innerHTML = `<b>${col.color}</b><small>${c+1} de ${n}</small>`;
+  const wa = el.querySelector(".js-wa"); wa.dataset.msg = msgFor(p, col); wireWA(el);
+});
+
+// Navegación entre apartados: #senora, #caballero, #respetuosos; el resto es la portada
+const vHome = document.getElementById("view-inicio"), vCat = document.getElementById("view-cat");
+function route() {
+  const key = (location.hash || "#inicio").slice(1);
+  const brand = key.startsWith("marca-") ? (BRANDS.concat(PRODUCTS.map(p => p.brand))).find(b => "marca-" + slug(b) === key) : null;
+  const isCat = key in VIEWS || !!brand;
+  const isMarcas = key === "marcas", isLegal = key === "legal";
+  vHome.hidden = isCat || isMarcas || isLegal; vCat.hidden = !isCat;
+  document.getElementById("view-marcas").hidden = !isMarcas;
+  document.getElementById("view-legal").hidden = !isLegal;
+  document.querySelectorAll(".menubar a").forEach(a => a.classList.toggle("on", a.dataset.nav === (brand ? "marcas" : key)));
+  if (brand) { renderBrand(brand); window.scrollTo(0, 0); }
+  else if (isCat) { renderCat(key); window.scrollTo(0, 0); }
+  else if (isMarcas || isLegal) { window.scrollTo(0, 0); }
+  else {
+    const t = document.getElementById(key);
+    if (t && key !== "inicio") t.scrollIntoView(); else window.scrollTo(0, 0);
+  }
+}
+window.addEventListener("hashchange", route);
+document.addEventListener("click", e => {
+  const a = e.target.closest('a[href^="#"]'); if (!a) return;
+  if (a.getAttribute("href") === location.hash) { e.preventDefault(); route(); }
+});
+
+// Barra superior con mensajes que cambian
+(() => {
+  const el = document.getElementById("smsg"); let i = 0;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  setInterval(() => {
+    i = (i + 1) % MESSAGES.length;
+    if (reduce) { el.textContent = MESSAGES[i]; return; }
+    el.classList.add("out");
+    setTimeout(() => { el.textContent = MESSAGES[i]; el.classList.remove("out"); }, 350);
+  }, 4500);
+})();
+
+// Portada: fotos que cambian solas
+(() => {
+  const root = document.getElementById("slider"), slides = [...root.querySelectorAll(".slide")], dots = root.querySelector(".sdots");
+  let i = 0, timer = null;
+  dots.innerHTML = slides.map((_,k) => `<button type="button" aria-label="Foto ${k+1} de ${slides.length}"${k===0?' aria-current="true"':""}></button>`).join("");
+  const go = k => {
+    i = (k + slides.length) % slides.length;
+    slides.forEach((s,n) => { s.classList.toggle("on", n === i); s.setAttribute("aria-hidden", n !== i); });
+    dots.querySelectorAll("button").forEach((d,n) => n === i ? d.setAttribute("aria-current","true") : d.removeAttribute("aria-current"));
+  };
+  const start = () => { if (!matchMedia("(prefers-reduced-motion: reduce)").matches) { clearInterval(timer); timer = setInterval(() => go(i + 1), 6000); } };
+  const stop = () => clearInterval(timer);
+  root.querySelector(".prev").onclick = () => { go(i - 1); start(); };
+  root.querySelector(".next").onclick = () => { go(i + 1); start(); };
+  dots.addEventListener("click", e => { const b = e.target.closest("button"); if (b) { go([...dots.children].indexOf(b)); start(); } });
+  root.addEventListener("mouseenter", stop); root.addEventListener("mouseleave", start);
+  root.addEventListener("focusin", stop); root.addEventListener("focusout", start);
+  go(0); start();
+})();
+
+function wireWA(scope) {
+  if (!WHATSAPP) return;
+  scope.querySelectorAll(".js-wa").forEach(a => {
+    a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(a.dataset.msg || "Hola");
+    a.target = "_blank"; a.rel = "noopener";
+  });
+}
+if (WHATSAPP) wireWA(document);
+// Redes sociales: cuando estén listas, poner aquí su enlace y se abrirán; vacías muestran "Muy pronto".
+const SOCIAL = {
+  instagram: "",   // https://www.instagram.com/zapatoscristinacadiz/
+  facebook: "",    // https://www.facebook.com/profile.php?id=100089682405349
+  tiktok: ""
+};
+const NETNAME = {instagram:"Instagram", facebook:"Facebook", tiktok:"TikTok"};
+const toast = document.createElement("div"); toast.className = "toast"; toast.setAttribute("role","status"); toast.hidden = true; document.body.appendChild(toast);
+let toastT;
+function showToast(msg){ toast.textContent = msg; toast.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => toast.hidden = true, 3200); }
+document.querySelectorAll(".js-soc").forEach(a => {
+  const net = a.dataset.net, url = SOCIAL[net];
+  if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+  else { a.title = "Muy pronto en " + NETNAME[net]; a.addEventListener("click", e => { e.preventDefault(); showToast("Muy pronto en " + NETNAME[net] + ". ¡Lo estamos preparando!"); }); }
+});
+route();
+
+// Ampliar foto
+const lb = document.getElementById("lb"), lbStage = document.getElementById("lb-stage"), lbImg = document.getElementById("lb-img");
+let lbP = null, lbC = 0, lbCard = null, zoom = 1, tx = 0, ty = 0, drag = null, moved = false;
+function lbApply(){ lbImg.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(${zoom})`; lbStage.classList.toggle("z", zoom > 1); }
+function lbReset(){ zoom = 1; tx = 0; ty = 0; lbApply(); }
+function lbShow(){
+  const col = lbP.colors[lbC], n = lbP.colors.length;
+  lbImg.src = col.img; lbImg.alt = `${lbP.line || lbP.brand} ${lbP.name}, color ${col.color.toLowerCase()}`;
+  document.getElementById("lb-name").textContent = `${lbP.line || lbP.brand} ${lbP.name}`;
+  document.getElementById("lb-col").textContent = `Color: ${col.color}${n > 1 ? " · " + (lbC+1) + " de " + n : ""}${lbP.price ? " · " + lbP.price + " €" : ""}`;
+  document.getElementById("lb-prev").hidden = document.getElementById("lb-next").hidden = n < 2;
+  lbReset();
+}
+function lbOpen(el){ lbCard = el; lbP = PRODUCTS[+el.dataset.i]; lbC = +el.dataset.c; lbShow(); lb.hidden = false; document.body.style.overflow = "hidden"; document.getElementById("lb-x").focus(); }
+function lbClose(){ lb.hidden = true; document.body.style.overflow = ""; if (lbCard) { const z = lbCard.querySelector(".zbtn"); z && z.focus(); } }
+function lbStep(d){
+  const n = lbP.colors.length; lbC = (lbC + d + n) % n; lbShow();
+  if (lbCard) { const b = lbCard.querySelector(`.cbtn[data-dir="${d}"]`); if (b && +lbCard.dataset.c !== lbC) b.click(); }
+}
+document.addEventListener("click", e => {
+  const pic = e.target.closest(".prod .pic"); if (!pic) return;
+  lbOpen(pic.closest(".prod"));
+});
+document.getElementById("lb-x").addEventListener("click", lbClose);
+document.getElementById("lb-prev").addEventListener("click", () => lbStep(-1));
+document.getElementById("lb-next").addEventListener("click", () => lbStep(1));
+document.addEventListener("keydown", e => { if (lb.hidden) return; if (e.key === "Escape") lbClose(); if (e.key === "ArrowRight" && lbP.colors.length > 1) lbStep(1); if (e.key === "ArrowLeft" && lbP.colors.length > 1) lbStep(-1); });
+window.addEventListener("hashchange", () => { if (!lb.hidden) lbClose(); });
+lbStage.addEventListener("pointerdown", e => { drag = {x: e.clientX, y: e.clientY, tx, ty}; moved = false; lbStage.setPointerCapture(e.pointerId); });
+lbStage.addEventListener("pointermove", e => {
+  if (!drag) return; const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+  if (Math.abs(dx) + Math.abs(dy) > 6) moved = true;
+  if (zoom > 1 && moved) { lbStage.classList.add("drag"); tx = drag.tx + dx; ty = drag.ty + dy; lbApply(); }
+});
+lbStage.addEventListener("pointerup", e => {
+  lbStage.classList.remove("drag"); const wasDrag = moved; drag = null;
+  if (wasDrag) return;
+  if (zoom > 1) { lbReset(); return; }
+  const r = lbStage.getBoundingClientRect(), Z = 2.6;
+  const cx = e.clientX - (r.left + r.width/2), cy = e.clientY - (r.top + r.height/2);
+  zoom = Z; tx = -cx * (Z - 1); ty = -cy * (Z - 1); lbApply();
+});
+
+
+// Ver / ocultar descripción
+document.addEventListener("click", e => {
+  const b = e.target.closest(".prod .dbtn"); if (!b) return;
+  const d = b.closest(".prod").querySelector(".desc"), open = b.getAttribute("aria-expanded") !== "true";
+  d.hidden = !open; b.setAttribute("aria-expanded", open);
+  b.innerHTML = open ? 'Ocultar <span aria-hidden="true">▴</span>' : 'Ver descripción <span aria-hidden="true">▾</span>';
+});
+</script>
+
+</body>
+</html>
