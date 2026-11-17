@@ -775,7 +775,11 @@ const card = (p, idx) => {
   </article>`;
 };
 
-const byBrand = list => [...new Set(list.map(([p]) => p.brand))].sort((a,b) => a.localeCompare(b, "es"));
+// Orden en que salen las marcas en Señora, Caballero y Barefoot (las que no estén aquí van después, por orden alfabético).
+const BRAND_ORDER = ["Pikolinos","Fluchos","Callaghan","Carmela","Art","24 Hrs","Mustang","El Naturalista","Gioseppo","Imac","Chika10","Refresh","Daniela Vega","Suave","Dockers","BBUP","Fly Flot","Luisetti","Cosdam"];
+const LAST = ["Cosdam"]; // zapatillas de estar por casa, siempre al final
+const brandRank = b => LAST.includes(b) ? 1000 + LAST.indexOf(b) : (BRAND_ORDER.indexOf(b) < 0 ? 500 : BRAND_ORDER.indexOf(b));
+const byBrand = list => [...new Set(list.map(([p]) => p.brand))].sort((a,b) => brandRank(a) - brandRank(b) || a.localeCompare(b, "es"));
 function renderCat(key) {
   const v = VIEWS[key];
   const list = PRODUCTS.map((p,i) => [p,i]).filter(([p]) => v.filter(p));
