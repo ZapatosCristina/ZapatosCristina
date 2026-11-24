@@ -131,6 +131,23 @@ svg.wa{width:22px;height:22px;fill:currentColor;flex:none}
 .legal .upd{color:var(--muted);font-size:.9rem;margin-top:24px}
 .copy a{color:inherit}
 .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:200;background:#222;color:#fff;padding:14px 22px;border-radius:999px;font-weight:700;font-size:1.05rem;box-shadow:0 6px 20px rgba(0,0,0,.25);width:max-content;max-width:calc(100% - 32px);text-align:center}
+/* ===== Black Friday ===== */
+.bf-bar{background:#111;color:#fff;font-size:.98rem}
+.bf-bar .in{display:flex;justify-content:center;align-items:center;gap:10px 14px;flex-wrap:wrap;padding-block:10px;text-align:center}
+.bf-pill{display:inline-block;background:var(--red);color:#fff;font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;padding:5px 12px;border-radius:999px;transform:rotate(-3deg)}
+.bf-slide{background:#111}
+.bf-slide::after{background:none}
+.bf-bg{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:2px;overflow:hidden;pointer-events:none}
+.bf-bg span{font-family:var(--f-display);font-weight:800;font-size:clamp(4rem,13vw,10rem);line-height:.95;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.08);white-space:nowrap;transform:translateX(18%)}
+.bf-red{color:var(--red)}
+.bf-short{display:none}
+@media (max-width:520px){ .bf-long{display:none} .bf-short{display:inline} .bf-bar .in{flex-wrap:nowrap;padding-block:8px} }
+.bf-slide .tag{display:inline-block;align-self:flex-start;background:var(--red);padding:6px 12px;border-radius:999px;opacity:1}
+.bf-slide p b{color:#fff;font-size:1.25em}
+.bf-sticker{position:absolute;z-index:2;right:clamp(20px,6vw,90px);top:50%;transform:translateY(-50%) rotate(-12deg);width:clamp(120px,18vw,200px);aspect-ratio:1;border-radius:50%;background:var(--red);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.45);border:4px dashed rgba(255,255,255,.7)}
+.bf-sticker small{font-family:var(--f-display);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:clamp(.75rem,1.4vw,1rem)}
+.bf-sticker b{font-family:var(--f-display);font-weight:800;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1}
+@media (max-width:680px){ .bf-sticker{top:22px;right:16px;transform:rotate(-12deg);width:104px} .bf-sticker b{font-size:2rem} }
 .rev{background:var(--soft)}
 .rev .in{display:grid;grid-template-columns:auto 1fr;gap:28px 48px;align-items:center}
 .rev .score b{font-family:var(--f-display);font-weight:800;font-size:3.6rem;line-height:1;display:block}
@@ -349,6 +366,7 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-
 
 
 <div class="strip" aria-live="polite"><div class="in"><span class="smsg" id="smsg">Pregunta por tu talla por WhatsApp</span></div></div>
+<div class="bf-bar bf-only"><div class="in"><span class="bf-pill">Black Friday</span><span class="bf-long">Del <b>23 al 30 de noviembre</b> · Descuentos del <b>10% al 50%</b></span><span class="bf-short"><b>23–30 nov</b> · del <b>10% al 50%</b></span></div></div>
 
 <header class="main"><div class="in">
   <a class="logo" href="#inicio" aria-label="Zapatos Cristina, inicio">
@@ -375,9 +393,14 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-
 <div class="view" id="view-inicio">
   <div class="in">
     <div class="slider" id="slider" aria-roledescription="carrusel" aria-label="Novedades de la tienda">
-      <div class="slide on" style="--pos:center 35%">
+      <div class="slide on bf-slide bf-only">
+        <div class="bf-bg" aria-hidden="true"><span>BLACK FRIDAY</span><span>BLACK FRIDAY</span><span>BLACK FRIDAY</span></div>
+        <div class="txt"><span class="tag">Del 23 al 30 de noviembre</span><h1 class="stitle">Black Friday<br><span class="bf-red">en Zapatos Cristina</span></h1><p>Descuentos del <b>10%</b> al <b>50%</b> en tienda. Pregúntanos por WhatsApp qué modelos están rebajados.</p><div class="actions"><a class="btn btn-white" href="#senora">Ver señora</a><a class="btn btn-ghost" href="#caballero">Ver caballero</a></div></div>
+        <div class="bf-sticker" aria-hidden="true"><small>hasta</small><b>-50%</b></div>
+      </div>
+      <div class="slide" style="--pos:center 35%">
         <img src="img/tienda/s-novedades.jpg" alt="Estantería de la tienda con botas y botines de Pikolinos y Refresh">
-        <div class="txt"><span class="tag">Otoño-invierno 2026</span><h1 class="stitle">Nueva colección ya en tienda</h1><p>Botines, botas y zapatillas de piel para este invierno.</p><div class="actions"><a class="btn btn-white" href="#senora">Ver señora</a><a class="btn btn-ghost" href="#caballero">Ver caballero</a></div></div>
+        <div class="txt"><span class="tag">Otoño-invierno 2026</span><h2 class="stitle">Nueva colección ya en tienda</h2><p>Botines, botas y zapatillas de piel para este invierno.</p><div class="actions"><a class="btn btn-white" href="#senora">Ver señora</a><a class="btn btn-ghost" href="#caballero">Ver caballero</a></div></div>
       </div>
       <div class="slide" style="--pos:center 40%">
         <img src="img/tienda/s-senora.jpg" alt="Estantería de señora con botines, zapatos y deportivos" loading="lazy">
@@ -542,6 +565,10 @@ const WHATSAPP = "34628834744";
 // Redes sociales: cuando tengáis la cuenta de TikTok, poned aquí el enlace.
 
 // Mensajes de la barra superior (van cambiando)
+// Black Friday: del 23 al 30 de noviembre de 2026. Pasado el 30, todo lo de Black Friday se oculta solo.
+const BF_END = new Date("2026-12-01T00:00:00+01:00");
+const BF_ON = Date.now() < BF_END.getTime();
+if (!BF_ON) { document.querySelectorAll(".bf-only").forEach(el => el.remove()); document.querySelector("#slider .slide")?.classList.add("on"); }
 const MESSAGES = [
   "Pregunta por tu talla por WhatsApp",
   "Nueva colección otoño-invierno ya en tienda",
