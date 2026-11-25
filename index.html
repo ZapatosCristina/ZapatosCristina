@@ -204,6 +204,15 @@ svg.wa{width:22px;height:22px;fill:currentColor;flex:none}
 .fbtn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:10px 26px;border:2px solid var(--ink);border-radius:999px;background:var(--card);color:var(--ink);font:inherit;font-family:var(--f-display);font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;cursor:pointer}
 .fbtn svg{width:22px;height:22px}
 .fbtn.on,.fbtn:hover{background:var(--ink);color:var(--card)}
+.fgroup .flabel{font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.85rem;color:var(--muted);margin:0 0 10px}
+.fbrands{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:8px}
+.fbr{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:8px 12px 8px 14px;border:2px solid var(--line);border-left:5px solid var(--red);border-radius:8px;background:var(--bg,#fff);color:var(--ink);font:inherit;cursor:pointer;text-align:left}
+.fbr span{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:.92rem;letter-spacing:.02em}
+.fbr small{background:var(--soft,#f3eee9);color:var(--muted);border-radius:999px;padding:1px 8px;font-weight:700;font-size:.8rem}
+.fbr:hover{border-color:var(--red)}
+.fbr.on{background:var(--red);border-color:var(--red);color:#fff}
+.fbr.on small{background:rgba(255,255,255,.25);color:#fff}
+@media (max-width:600px){ .fbrands{grid-template-columns:1fr 1fr} .fbr span{font-size:.85rem} }
 .fdone{align-self:flex-start;min-height:50px}
 .cfil{margin-top:14px;display:flex;flex-direction:column;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
 .ftype{display:flex;flex-wrap:wrap;gap:8px}
@@ -592,10 +601,8 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-
         <button type="button" class="fclear" id="f-clear" hidden>Quitar filtros</button>
       </div>
       <div class="cfil" id="cfil" hidden>
-        <div class="ftype" id="f-type" role="group" aria-label="Tipo de zapato"></div>
-        <div class="fsel">
-          <label>Marca<select id="f-brand"></select></label>
-        </div>
+        <div class="fgroup"><p class="flabel">Tipo de zapato</p><div class="ftype" id="f-type" role="group" aria-label="Tipo de zapato"></div></div>
+        <div class="fgroup"><p class="flabel">Marca</p><div class="fbrands" id="f-brand" role="group" aria-label="Marca"></div></div>
         <button type="button" class="btn btn-red fdone" id="f-done">Ver <span id="f-done-n"></span></button>
       </div>
     </div>
@@ -928,7 +935,8 @@ function drawCat() {
     `<button type="button" class="bchip${FS.type === k ? " on" : ""}" data-k="${k}" aria-pressed="${FS.type === k}">${t} <small>${n}</small></button>`).join("");
   const brands = [...new Set(byB.map(([p]) => p.brand))];
   if (FS.brand !== "*" && !brands.includes(FS.brand)) brands.push(FS.brand);
-  document.getElementById("f-brand").innerHTML = `<option value="*">Todas las marcas</option>` + brands.map(b => `<option value="${b}"${FS.brand === b ? " selected" : ""}>${b} (${byB.filter(([p]) => p.brand === b).length})</option>`).join("");
+  document.getElementById("f-brand").innerHTML = [["*", "Todas", byB.length], ...brands.map(b => [b, b, byB.filter(([p]) => p.brand === b).length])].map(([k,t,n]) =>
+    `<button type="button" class="fbr${FS.brand === k ? " on" : ""}" data-b="${k}" aria-pressed="${FS.brand === k}"><span>${t}</span><small>${n}</small></button>`).join("");
   const nAct = (FS.type !== "*") + (FS.brand !== "*") + (FS.alt !== "*") + FS.feats.size;
   document.getElementById("f-anum").textContent = nAct || "";
   document.getElementById("f-done-n").textContent = plural(list.length);
@@ -965,7 +973,9 @@ document.getElementById("fbar").addEventListener("click", e => {
 document.getElementById("cfil").addEventListener("click", e => {
   if (e.target.closest("#f-done")) { setPanel(false); document.getElementById("fbar").scrollIntoView({behavior:"smooth", block:"start"}); return; }
   const t = e.target.closest("#f-type .bchip"), f = e.target.closest("#f-feat .bchip");
-  if (t) FS.type = t.dataset.k;
+  const br = e.target.closest("#f-brand .fbr");
+  if (br) FS.brand = br.dataset.b;
+  else if (t) FS.type = t.dataset.k;
   else if (f) { const k = f.dataset.f; FS.feats.has(k) ? FS.feats.delete(k) : FS.feats.add(k); }
   else return;
   drawCat();
