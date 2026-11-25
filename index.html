@@ -232,16 +232,16 @@ svg.wa{width:22px;height:22px;fill:currentColor;flex:none}
 .cat img.shoe{object-fit:contain;background:#fff;padding:12px 12px 64px}
 
 /* marcas */
-.brands{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:0;margin:0}
-.brands li{list-style:none;font-family:var(--f-display);font-weight:700;font-size:clamp(1rem,2vw,1.25rem);letter-spacing:.04em;text-transform:uppercase;padding:14px 24px;border:2px solid var(--line);border-radius:6px;background:var(--card)}
+
+
 
 .bgal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.bgal figure{margin:0;border-radius:10px;overflow:hidden;background:var(--card);border:1px solid var(--line);min-width:0}
-.bgal img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.bgal figcaption{padding:12px 14px;display:flex;flex-direction:column;gap:2px}
-.bgal figcaption b{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.05rem}
-.bgal figcaption span{color:var(--muted);font-size:.92rem}
-.brands{justify-content:flex-start}
+
+
+
+
+
+
 @media (max-width:900px){ .bgal{grid-template-columns:1fr 1fr} }
 
 /* ventajas */
@@ -340,11 +340,37 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-
 #c-list{padding-block:24px 64px}
 [hidden]{display:none!important}
 .bcard{color:inherit;text-decoration:none;display:block;min-width:0}
+/* ===== Página de marcas ===== */
+.mk-intro{color:var(--muted);max-width:640px;margin-top:8px;font-size:1.05rem}
+.bgal figure{position:relative;margin:0;border-radius:14px;overflow:hidden;background:#222;min-width:0;aspect-ratio:4/3;box-shadow:0 6px 18px rgba(0,0,0,.10)}
+.bgal img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.bgal figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,8,6,0) 30%,rgba(15,8,6,.55) 60%,rgba(15,8,6,.9) 100%)}
+.bgal figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:18px 20px;display:flex;flex-direction:column;gap:2px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.bgal figcaption b{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.45rem;letter-spacing:.02em;line-height:1.1}
+.bgal figcaption span{font-size:.98rem;opacity:.92}
+.bcard .go{text-shadow:none;align-self:flex-start;margin-top:10px;background:#fff;color:var(--red-deep,#A8170F);font-weight:800;font-size:.92rem;padding:6px 14px;border-radius:999px;opacity:1!important}
+.bcard:hover img,.bcard:focus-visible img{transform:scale(1.05)}
+.bcard:hover .go{background:var(--red);color:#fff}
+.allb{margin-top:44px;background:var(--card);border:1px solid var(--line);border-top:5px solid var(--red);border-radius:14px;padding:24px 24px 26px}
+.allb-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:4px 16px;margin-bottom:16px}
+.allb-head h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.3rem;margin:0}
+.allb-head p{color:var(--muted);margin:0}
+.brands{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0;margin:0}
+.brands li{list-style:none;min-width:0}
+.brands a{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;column-gap:8px;align-items:center;height:100%;padding:12px 14px 12px 16px;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:8px;background:var(--bg,#fff);color:inherit;text-decoration:none;transition:background .2s,border-color .2s}
+.brands .bn{font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:1rem;grid-column:1}
+.brands .bs{grid-column:1;font-size:.82rem;color:var(--muted);margin-top:-2px}
+.brands .bc{grid-column:1;font-size:.88rem;color:var(--muted)}
+.brands .ba{grid-column:2;grid-row:1 / span 3;font-size:1.6rem;color:var(--red);line-height:1}
+.brands a:hover{border-color:var(--red);background:#fff5f4}
+@media (max-width:900px){ .brands{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:600px){ .bgal{grid-template-columns:1fr 1fr;gap:10px} .bgal figure{aspect-ratio:4/5;border-radius:10px} .bgal figcaption{padding:12px} .bgal figcaption b{font-size:1.05rem} .bgal figcaption span:not(.go){display:none} .bcard .go{font-size:.8rem;padding:5px 10px;margin-top:6px} .allb{padding:18px 14px} .brands{grid-template-columns:1fr 1fr;gap:8px} .brands a{padding:10px 10px 10px 12px} .brands .bn{font-size:.92rem} }
+
 .bcard figure{height:100%}
-.bcard .go{color:var(--red)!important;font-weight:700;margin-top:4px}
-.bcard:hover figure{border-color:var(--red)}
-.brands a{color:inherit;text-decoration:none}
-.brands li:has(a):hover{border-color:var(--red)}
+
+
+
+
 .bhead a{color:inherit;text-decoration:none}
 .bhead a:hover{color:var(--red)}
 .crumbs a{color:var(--muted)}
@@ -496,7 +522,7 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-
 <div class="view" id="view-marcas" hidden>
   <section id="marcas">
     <div class="in">
-      <div class="head"><p class="eyebrow">Marcas</p><h2>Nuestras marcas en tienda</h2></div>
+      <div class="head"><p class="eyebrow">Marcas</p><h2>Nuestras marcas en tienda</h2><p class="mk-intro">Trabajamos con marcas de calidad, muchas de ellas fabricadas en España. Así las tenemos en la tienda.</p></div>
       <div class="bgal">
         <a class="bcard" href="#marca-pikolinos"><figure><img src="img/marcas/pikolinos-v2.jpg" alt="Rincón de Pikolinos en la tienda" loading="lazy"><figcaption><b>Pikolinos</b><span>Piel y comodidad para cada día</span><span class="go">Ver modelos →</span></figcaption></figure></a>
         <a class="bcard" href="#marca-carmela"><figure><img src="img/marcas/carmela-v3.jpg" alt="Escaparate de Carmela en la tienda" loading="lazy"><figcaption><b>Carmela</b><span>Botas y botines de piel</span><span class="go">Ver modelos →</span></figcaption></figure></a>
@@ -508,8 +534,10 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-
         <a class="bcard" href="#marca-chika10"><figure><img src="img/marcas/chika10-v3.jpg" alt="Botas altas de Chika10 en la tienda" loading="lazy"><figcaption><b>Chika10</b><span>Botas y botines de temporada</span><span class="go">Ver modelos →</span></figcaption></figure></a>
         <a class="bcard" href="#marca-dockers"><figure><img src="img/marcas/dockers-v3.jpg" alt="Zapatos barefoot de Dockers en la tienda" loading="lazy"><figcaption><b>Dockers</b><span>Barefoot de caballero</span><span class="go">Ver modelos →</span></figcaption></figure></a>
       </div>
-      <p class="eyebrow" style="margin-top:32px">Y además</p>
-      <ul class="brands"><li><a href="#marca-pikolinos">Pikolinos</a></li><li><a href="#marca-callaghan">Callaghan</a></li><li><a href="#marca-mustang">Mustang · Maria Mare</a></li><li><a href="#marca-fluchos">Fluchos · Dorking</a></li><li><a href="#marca-el-naturalista">El Naturalista</a></li><li><a href="#marca-gioseppo">Gioseppo</a></li><li><a href="#marca-imac">Imac</a></li><li><a href="#marca-daniela-vega">Daniela Vega</a></li><li><a href="#marca-suave">Suave</a></li><li><a href="#marca-chika10">Chika10</a></li><li><a href="#marca-bbup">BBUP</a></li><li><a href="#marca-fly-flot">Fly Flot</a></li><li><a href="#marca-cosdam">Cosdam</a></li><li><a href="#marca-luisetti">Luisetti</a></li><li><a href="#marca-refresh">Refresh</a></li><li><a href="#marca-dockers">Dockers</a></li></ul>
+      <div class="allb">
+        <div class="allb-head"><h3>Todas nuestras marcas</h3><p>De la A a la Z. Pulsa una para ver sus modelos.</p></div>
+        <ul class="brands" id="allbrands"></ul>
+      </div>
     </div>
   </section>
 </div>
@@ -811,6 +839,7 @@ const VIEWS = {
 const WHO = {senora:"señora", caballero:"caballero", unisex:"unisex"};
 
 // Marcas de la tienda (para sus páginas). Las que aún no tienen modelos muestran "Muy pronto".
+const BRAND_SUB = {"Mustang":"Maria Mare", "Fluchos":"Dorking", "Chika10":"Renature", "Cosdam":"Biorelax"};
 const BRANDS = ["Pikolinos","Callaghan","Fluchos","El Naturalista","Carmela","Art","24 Hrs","Mustang","Gioseppo","Imac","Daniela Vega","Suave","Chika10","BBUP","Fly Flot","Cosdam","Luisetti","Refresh","Dockers"];
 const slug = t => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 
@@ -1009,6 +1038,15 @@ document.addEventListener("click", e => {
   const a = e.target.closest('a[href^="#"]'); if (!a) return;
   if (a.getAttribute("href") === location.hash) { e.preventDefault(); route(); }
 });
+
+// Lista "Todas nuestras marcas" (A-Z) con número de modelos
+(() => {
+  const ul = document.getElementById("allbrands"); if (!ul) return;
+  ul.innerHTML = [...BRANDS].sort((a,b) => a.localeCompare(b, "es")).map(b => {
+    const n = PRODUCTS.filter(p => p.brand === b).length;
+    return `<li><a href="#marca-${slug(b)}"><span class="bn">${b}</span>${BRAND_SUB[b] ? `<span class="bs">y ${BRAND_SUB[b]}</span>` : ""}<span class="bc">${n ? (n === 1 ? "1 modelo" : n + " modelos") : "Muy pronto"}</span><span class="ba" aria-hidden="true">›</span></a></li>`;
+  }).join("");
+})();
 
 // Barra superior con mensajes que cambian
 (() => {
