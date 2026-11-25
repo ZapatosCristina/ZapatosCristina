@@ -209,7 +209,7 @@ svg.wa{width:22px;height:22px;fill:currentColor;flex:none}
 .ftype{display:flex;flex-wrap:wrap;gap:8px}
 .bchip small{opacity:.7;font-weight:600;margin-left:2px}
 .fsel{display:flex;flex-wrap:wrap;gap:12px}
-.fsel label{display:flex;flex-direction:column;gap:4px;font-weight:700;font-size:.95rem;flex:1 1 220px}
+.fsel label{display:flex;flex-direction:column;gap:4px;font-weight:700;font-size:.95rem;flex:0 1 420px}
 .fsel select{min-height:48px;padding:8px 12px;border:2px solid var(--line);border-radius:10px;background:var(--bg,#fff);color:var(--ink);font:inherit;font-size:1.05rem}
 .flabel{font-weight:700;margin:0 0 8px}
 .flabel small{font-weight:400;color:var(--muted)}
@@ -567,7 +567,6 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-
         <div class="ftype" id="f-type" role="group" aria-label="Tipo de zapato"></div>
         <div class="fsel">
           <label>Marca<select id="f-brand"></select></label>
-          <label>Altura<select id="f-alt"></select></label>
         </div>
         <div class="ffeat"><p class="flabel">Características <small>(puedes marcar varias)</small></p><div id="f-feat" role="group" aria-label="Características"></div></div>
         <button type="button" class="btn btn-red fdone" id="f-done">Ver <span id="f-done-n"></span></button>
@@ -902,7 +901,6 @@ function drawCat() {
   const brands = [...new Set(byB.map(([p]) => p.brand))];
   if (FS.brand !== "*" && !brands.includes(FS.brand)) brands.push(FS.brand);
   document.getElementById("f-brand").innerHTML = `<option value="*">Todas las marcas</option>` + brands.map(b => `<option value="${b}"${FS.brand === b ? " selected" : ""}>${b} (${byB.filter(([p]) => p.brand === b).length})</option>`).join("");
-  document.getElementById("f-alt").innerHTML = `<option value="*">Cualquier altura</option>` + ALTS.map(([k,t,fn]) => { const n = byA.filter(([p]) => fn(p)).length; return n || FS.alt === k ? `<option value="${k}"${FS.alt === k ? " selected" : ""}>${t} (${n})</option>` : ""; }).join("");
   document.getElementById("f-feat").innerHTML = FEATS.map(([t,fn]) => {
     const on = FS.feats.has(t), n = (on ? list : list).filter(([p]) => fn(p)).length;
     return n || on ? `<button type="button" class="bchip fchip${on ? " on" : ""}" data-f="${t}" aria-pressed="${on}">${on ? "✓ " : ""}${t} <small>${n}</small></button>` : "";
@@ -950,7 +948,6 @@ document.getElementById("cfil").addEventListener("click", e => {
 });
 document.getElementById("cfil").addEventListener("change", e => {
   if (e.target.id === "f-brand") FS.brand = e.target.value;
-  if (e.target.id === "f-alt") FS.alt = e.target.value;
   drawCat();
 });
 document.getElementById("c-list").addEventListener("click", e => {
