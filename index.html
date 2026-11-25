@@ -200,7 +200,12 @@ svg.wa{width:22px;height:22px;fill:currentColor;flex:none}
 .bfilter{display:flex;flex-wrap:wrap;gap:8px}
 .bchip{min-height:46px;padding:8px 18px;border:2px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
 .bchip.on{background:var(--red);border-color:var(--red);color:#fff}
-.cfil{margin-top:22px;display:flex;flex-direction:column;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.fbar{scroll-margin-top:110px;margin-top:20px;display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap}
+.fbtn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:10px 26px;border:2px solid var(--ink);border-radius:999px;background:var(--card);color:var(--ink);font:inherit;font-family:var(--f-display);font-weight:800;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;cursor:pointer}
+.fbtn svg{width:22px;height:22px}
+.fbtn.on,.fbtn:hover{background:var(--ink);color:var(--card)}
+.fdone{align-self:flex-start;min-height:50px}
+.cfil{margin-top:14px;display:flex;flex-direction:column;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
 .ftype{display:flex;flex-wrap:wrap;gap:8px}
 .bchip small{opacity:.7;font-weight:600;margin-left:2px}
 .fsel{display:flex;flex-wrap:wrap;gap:12px}
@@ -210,17 +215,13 @@ svg.wa{width:22px;height:22px;fill:currentColor;flex:none}
 .flabel small{font-weight:400;color:var(--muted)}
 #f-feat{display:flex;flex-wrap:wrap;gap:8px}
 .fchip{min-height:42px;padding:6px 14px;font-size:.95rem}
-.fcount{margin:0;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-weight:600}
+.fcount{font-weight:600}
 .fclear{background:none;border:0;color:var(--red);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer;min-height:44px}
 .fempty{text-align:center;padding:40px 0}
 .fempty p{font-size:1.15rem;margin-bottom:14px}
-.ffeat summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:44px}
-.ffeat summary::-webkit-details-marker{display:none}
-.ffeat summary::after{content:"▾";margin-left:auto;font-size:1.2rem;transition:transform .2s}
-.ffeat[open] summary::after{transform:rotate(180deg)}
 .fnum{background:var(--red);color:#fff;border-radius:999px;padding:0 9px;font-size:.85rem}
 .fnum:empty{display:none}
-@media (max-width:600px){ .cfil{padding:14px;margin-inline:-4px;gap:12px} .ftype .bchip{min-height:42px;padding:6px 14px} .fsel label{flex-basis:140px} .ffeat summary{border:2px solid var(--line);border-radius:10px;padding:6px 12px} }
+@media (max-width:600px){ .cfil{padding:14px;margin-inline:-4px;gap:12px} .ftype .bchip{min-height:42px;padding:6px 14px} .fsel label{flex-basis:140px} }
 .bgroup{margin-bottom:34px}
 .bhead{display:flex;align-items:baseline;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em;margin:0 0 14px;padding-left:12px;border-left:4px solid var(--red)}
 .bhead small{font-family:var(--f-body);font-weight:400;font-size:.92rem;text-transform:none;letter-spacing:0;color:var(--muted)}
@@ -557,14 +558,19 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-
       <h1 id="c-title"></h1>
       <p class="intro" id="c-intro"></p>
       <div class="bfilter" id="bfilter" role="group" aria-label="Filtrar por marca"></div>
+      <div class="fbar" id="fbar" hidden>
+        <button type="button" class="fbtn" id="f-toggle" aria-expanded="false" aria-controls="cfil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg> Filtrar <span class="fnum" id="f-anum"></span></button>
+        <span class="fcount" id="f-count"></span>
+        <button type="button" class="fclear" id="f-clear" hidden>Quitar filtros</button>
+      </div>
       <div class="cfil" id="cfil" hidden>
         <div class="ftype" id="f-type" role="group" aria-label="Tipo de zapato"></div>
         <div class="fsel">
           <label>Marca<select id="f-brand"></select></label>
           <label>Altura<select id="f-alt"></select></label>
         </div>
-        <details class="ffeat" id="f-det"><summary class="flabel">Características <small>(puedes marcar varias)</small> <span class="fnum" id="f-fnum"></span></summary><div id="f-feat" role="group" aria-label="Características"></div></details>
-        <p class="fcount"><span id="f-count"></span> <button type="button" class="fclear" id="f-clear" hidden>Quitar filtros</button></p>
+        <div class="ffeat"><p class="flabel">Características <small>(puedes marcar varias)</small></p><div id="f-feat" role="group" aria-label="Características"></div></div>
+        <button type="button" class="btn btn-red fdone" id="f-done">Ver <span id="f-done-n"></span></button>
       </div>
     </div>
     <div id="c-list"></div>
@@ -901,7 +907,9 @@ function drawCat() {
     const on = FS.feats.has(t), n = (on ? list : list).filter(([p]) => fn(p)).length;
     return n || on ? `<button type="button" class="bchip fchip${on ? " on" : ""}" data-f="${t}" aria-pressed="${on}">${on ? "✓ " : ""}${t} <small>${n}</small></button>` : "";
   }).join("");
-  document.getElementById("f-fnum").textContent = FS.feats.size ? FS.feats.size + (FS.feats.size === 1 ? " marcada" : " marcadas") : "";
+  const nAct = (FS.type !== "*") + (FS.brand !== "*") + (FS.alt !== "*") + FS.feats.size;
+  document.getElementById("f-anum").textContent = nAct || "";
+  document.getElementById("f-done-n").textContent = plural(list.length);
   const active = FS.type !== "*" || FS.brand !== "*" || FS.alt !== "*" || FS.feats.size;
   document.getElementById("f-count").textContent = active ? `Mostrando ${plural(list.length)} de ${base.length}` : `${plural(base.length)}`;
   document.getElementById("f-clear").hidden = !active;
@@ -918,16 +926,25 @@ function renderCat(key) {
   document.getElementById("c-title").innerHTML = `${v.title} <small>${n ? plural(n) : ""}</small>`;
   document.getElementById("c-intro").textContent = v.intro;
   document.getElementById("bfilter").hidden = true;
-  document.getElementById("cfil").hidden = !n;
+  document.getElementById("fbar").hidden = !n;
   if (!n) { document.getElementById("c-list").innerHTML = `<p class="empty">${v.empty}</p>`; return; }
-  document.getElementById("f-det").open = matchMedia("(min-width:601px)").matches;
+  setPanel(false);
   drawCat();
 }
+function setPanel(open) {
+  document.getElementById("cfil").hidden = !open;
+  document.getElementById("f-toggle").setAttribute("aria-expanded", open);
+  document.getElementById("f-toggle").classList.toggle("on", open);
+}
+document.getElementById("fbar").addEventListener("click", e => {
+  if (e.target.closest("#f-toggle")) setPanel(document.getElementById("cfil").hidden);
+  else if (e.target.closest("#f-clear")) { FS.type = "*"; FS.brand = "*"; FS.alt = "*"; FS.feats.clear(); drawCat(); }
+});
 document.getElementById("cfil").addEventListener("click", e => {
-  const t = e.target.closest("#f-type .bchip"), f = e.target.closest("#f-feat .bchip"), c = e.target.closest("#f-clear");
+  if (e.target.closest("#f-done")) { setPanel(false); document.getElementById("fbar").scrollIntoView({behavior:"smooth", block:"start"}); return; }
+  const t = e.target.closest("#f-type .bchip"), f = e.target.closest("#f-feat .bchip");
   if (t) FS.type = t.dataset.k;
   else if (f) { const k = f.dataset.f; FS.feats.has(k) ? FS.feats.delete(k) : FS.feats.add(k); }
-  else if (c) { FS.type = "*"; FS.brand = "*"; FS.alt = "*"; FS.feats.clear(); }
   else return;
   drawCat();
 });
@@ -951,7 +968,7 @@ function renderBrand(name) {
   const groups = [["senora","Señora"],["caballero","Caballero"],["unisex","Unisex"]].map(([k,t]) => [k, t, list.filter(([p]) => p.who === k)]).filter(g => g[2].length);
   document.getElementById("c-list").innerHTML = groups.map(([k,t,items]) =>
     `<div class="bgroup" data-brand="${k}"><h2 class="bhead">${t} <small>${items.length === 1 ? "1 modelo" : items.length + " modelos"}</small></h2><div class="grid">${items.map(([p,i]) => card(p, i)).join("")}</div></div>`).join("");
-  document.getElementById("cfil").hidden = true;
+  document.getElementById("cfil").hidden = true; document.getElementById("fbar").hidden = true;
   const bf = document.getElementById("bfilter");
   bf.hidden = groups.length < 2;
   bf.innerHTML = [["*","Todo"], ...groups.map(([k,t]) => [k,t])].map(([k,t],i) => `<button type="button" class="bchip${i===0?" on":""}" data-brand="${k}" aria-pressed="${i===0}">${t}</button>`).join("");
