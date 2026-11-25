@@ -568,7 +568,6 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-
         <div class="fsel">
           <label>Marca<select id="f-brand"></select></label>
         </div>
-        <div class="ffeat"><p class="flabel">Características <small>(puedes marcar varias)</small></p><div id="f-feat" role="group" aria-label="Características"></div></div>
         <button type="button" class="btn btn-red fdone" id="f-done">Ver <span id="f-done-n"></span></button>
       </div>
     </div>
@@ -901,10 +900,6 @@ function drawCat() {
   const brands = [...new Set(byB.map(([p]) => p.brand))];
   if (FS.brand !== "*" && !brands.includes(FS.brand)) brands.push(FS.brand);
   document.getElementById("f-brand").innerHTML = `<option value="*">Todas las marcas</option>` + brands.map(b => `<option value="${b}"${FS.brand === b ? " selected" : ""}>${b} (${byB.filter(([p]) => p.brand === b).length})</option>`).join("");
-  document.getElementById("f-feat").innerHTML = FEATS.map(([t,fn]) => {
-    const on = FS.feats.has(t), n = (on ? list : list).filter(([p]) => fn(p)).length;
-    return n || on ? `<button type="button" class="bchip fchip${on ? " on" : ""}" data-f="${t}" aria-pressed="${on}">${on ? "✓ " : ""}${t} <small>${n}</small></button>` : "";
-  }).join("");
   const nAct = (FS.type !== "*") + (FS.brand !== "*") + (FS.alt !== "*") + FS.feats.size;
   document.getElementById("f-anum").textContent = nAct || "";
   document.getElementById("f-done-n").textContent = plural(list.length);
