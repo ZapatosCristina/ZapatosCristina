@@ -200,6 +200,27 @@ svg.wa{width:22px;height:22px;fill:currentColor;flex:none}
 .bfilter{display:flex;flex-wrap:wrap;gap:8px}
 .bchip{min-height:46px;padding:8px 18px;border:2px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
 .bchip.on{background:var(--red);border-color:var(--red);color:#fff}
+.cfil{margin-top:22px;display:flex;flex-direction:column;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.ftype{display:flex;flex-wrap:wrap;gap:8px}
+.bchip small{opacity:.7;font-weight:600;margin-left:2px}
+.fsel{display:flex;flex-wrap:wrap;gap:12px}
+.fsel label{display:flex;flex-direction:column;gap:4px;font-weight:700;font-size:.95rem;flex:1 1 220px}
+.fsel select{min-height:48px;padding:8px 12px;border:2px solid var(--line);border-radius:10px;background:var(--bg,#fff);color:var(--ink);font:inherit;font-size:1.05rem}
+.flabel{font-weight:700;margin:0 0 8px}
+.flabel small{font-weight:400;color:var(--muted)}
+#f-feat{display:flex;flex-wrap:wrap;gap:8px}
+.fchip{min-height:42px;padding:6px 14px;font-size:.95rem}
+.fcount{margin:0;display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-weight:600}
+.fclear{background:none;border:0;color:var(--red);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer;min-height:44px}
+.fempty{text-align:center;padding:40px 0}
+.fempty p{font-size:1.15rem;margin-bottom:14px}
+.ffeat summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-height:44px}
+.ffeat summary::-webkit-details-marker{display:none}
+.ffeat summary::after{content:"▾";margin-left:auto;font-size:1.2rem;transition:transform .2s}
+.ffeat[open] summary::after{transform:rotate(180deg)}
+.fnum{background:var(--red);color:#fff;border-radius:999px;padding:0 9px;font-size:.85rem}
+.fnum:empty{display:none}
+@media (max-width:600px){ .cfil{padding:14px;margin-inline:-4px;gap:12px} .ftype .bchip{min-height:42px;padding:6px 14px} .fsel label{flex-basis:140px} .ffeat summary{border:2px solid var(--line);border-radius:10px;padding:6px 12px} }
 .bgroup{margin-bottom:34px}
 .bhead{display:flex;align-items:baseline;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.15rem;text-transform:uppercase;letter-spacing:.03em;margin:0 0 14px;padding-left:12px;border-left:4px solid var(--red)}
 .bhead small{font-family:var(--f-body);font-weight:400;font-size:.92rem;text-transform:none;letter-spacing:0;color:var(--muted)}
@@ -536,6 +557,15 @@ footer .copy{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.3);padding-
       <h1 id="c-title"></h1>
       <p class="intro" id="c-intro"></p>
       <div class="bfilter" id="bfilter" role="group" aria-label="Filtrar por marca"></div>
+      <div class="cfil" id="cfil" hidden>
+        <div class="ftype" id="f-type" role="group" aria-label="Tipo de zapato"></div>
+        <div class="fsel">
+          <label>Marca<select id="f-brand"></select></label>
+          <label>Altura<select id="f-alt"></select></label>
+        </div>
+        <details class="ffeat" id="f-det"><summary class="flabel">Características <small>(puedes marcar varias)</small> <span class="fnum" id="f-fnum"></span></summary><div id="f-feat" role="group" aria-label="Características"></div></details>
+        <p class="fcount"><span id="f-count"></span> <button type="button" class="fclear" id="f-clear" hidden>Quitar filtros</button></p>
+      </div>
     </div>
     <div id="c-list"></div>
   </div>
@@ -811,22 +841,105 @@ const BRAND_ORDER = ["Pikolinos","Fluchos","Callaghan","Carmela","Art","24 Hrs",
 const LAST = ["Cosdam"]; // zapatillas de estar por casa, siempre al final
 const brandRank = b => LAST.includes(b) ? 1000 + LAST.indexOf(b) : (BRAND_ORDER.indexOf(b) < 0 ? 500 : BRAND_ORDER.indexOf(b));
 const byBrand = list => [...new Set(list.map(([p]) => p.brand))].sort((a,b) => brandRank(a) - brandRank(b) || a.localeCompare(b, "es"));
-function renderCat(key) {
+// ===== Filtros de Señora, Caballero y Barefoot =====
+const norm = t => (t || "").toLowerCase();
+const ptext = p => norm(p.name + " " + p.type);
+const alltext = p => norm(p.name + " " + p.type + " " + (p.desc || "") + " " + (p.tags || []).join(" "));
+const hasTag = (p, ...t) => (p.tags || []).some(x => t.includes(x));
+const TYPES = [
+  ["botas", "Botas", p => /\bbotas?\b/.test(ptext(p)) && !isCasa(p)],
+  ["botines", "Botines", p => /bot[ií]n|chelsea/.test(ptext(p)) && !isCasa(p)],
+  ["zapatos", "Zapatos", p => !isCasa(p) && !/\bbotas?\b|bot[ií]n|chelsea|mocas|deportiv|sneaker|zapatilla/.test(ptext(p))],
+  ["mocasines", "Mocasines", p => /mocas/.test(ptext(p))],
+  ["deportivos", "Deportivas y zapatillas", p => !isCasa(p) && !/bot[ií]n|\bbotas?\b|mocas/.test(ptext(p)) && /deportiv|sneaker|zapatilla/.test(ptext(p))],
+  ["casa", "Zapatillas de casa", p => isCasa(p)]
+];
+function isCasa(p) { return /de casa/.test(ptext(p)) || p.brand === "Cosdam"; }
+const ALTS = [
+  ["plano", "Plano", p => hasTag(p, "Plano", "Barefoot") || p.barefoot || /\bplan[oa]s?\b/.test(ptext(p))],
+  ["tacon", "Con tacón", p => hasTag(p, "Tacón bajo", "Tacón ancho") || /tac[oó]n|kitten/.test(ptext(p))],
+  ["cuna", "Con cuña", p => hasTag(p, "Cuña", "Cuña baja") || /cuña/.test(ptext(p))]
+];
+const FEATS = [
+  ["Barefoot", p => p.barefoot || hasTag(p, "Barefoot")],
+  ["Cremallera", p => hasTag(p, "Cremallera", "Doble cremallera") || /cremallera/.test(alltext(p))],
+  ["Velcro", p => hasTag(p, "Velcro") || /velcro/.test(alltext(p))],
+  ["Sin cordones / elástico", p => hasTag(p, "Elástico", "Caña elástica", "Fácil de calzar") || /elástic|sin cordones/.test(norm(p.name + " " + p.type))],
+  ["Plantilla extraíble", p => hasTag(p, "Plantilla extraíble") || /plantilla extra[ií]ble/.test(alltext(p))],
+  ["Horma ancha", p => hasTag(p, "Horma ancha", "Puntera ancha") || /horma (ancha|amplia)|puntera (ancha|amplia)/.test(alltext(p))],
+  ["Ligero", p => hasTag(p, "Ligera") || /ligera|ligero/.test(alltext(p))],
+  ["Antideslizante", p => hasTag(p, "Antideslizante") || /antideslizante|no resbala/.test(alltext(p))],
+  ["Impermeable", p => hasTag(p, "Waterproof") || /waterproof|impermeable/.test(alltext(p))],
+  ["Abrigado", p => hasTag(p, "Abrigado") || /calentit|borreguito|abrigad/.test(alltext(p))],
+  ["Piel", p => hasTag(p, "Piel") || /\bpiel\b/.test(ptext(p))],
+  ["Vegano", p => hasTag(p, "Vegana")]
+];
+let FS = {key:null, type:"*", brand:"*", alt:"*", feats:new Set()};
+const plural = n => n === 1 ? "1 modelo" : n + " modelos";
+function catBase(key) {
   const v = VIEWS[key];
-  const list = PRODUCTS.map((p,i) => [p,i]).filter(([p]) => v.filter(p));
-  document.getElementById("c-crumbs").innerHTML = `<a href="#inicio">Inicio</a> › ${v.title}`;
-  document.getElementById("c-title").innerHTML = `${v.title} <small>${list.length ? list.length + (list.length === 1 ? " modelo" : " modelos") : ""}</small>`;
-  document.getElementById("c-intro").textContent = v.intro;
-  const brands = byBrand(list);
-  document.getElementById("c-list").innerHTML = list.length ? brands.map(br => {
-    const items = list.filter(([p]) => p.brand === br);
-    return `<div class="bgroup" data-brand="${br}"><h2 class="bhead"><a href="#marca-${slug(br)}">${br}</a> <small>${items.length === 1 ? "1 modelo" : items.length + " modelos"}</small></h2><div class="grid">${items.map(([p,i]) => card(p, i)).join("")}</div></div>`;
-  }).join("") : `<p class="empty">${v.empty}</p>`;
-  const bf = document.getElementById("bfilter");
-  bf.hidden = brands.length < 2;
-  bf.innerHTML = ["Todas las marcas", ...brands].map((b,i) => `<button type="button" class="bchip${i===0?" on":""}" data-brand="${i===0 ? "*" : b}" aria-pressed="${i===0}">${b}</button>`).join("");
+  return PRODUCTS.map((p,i) => [p,i]).filter(([p]) => v.filter(p)).sort((a,b) => brandRank(a[0].brand) - brandRank(b[0].brand) || a[1] - b[1]);
+}
+function applyF(list, skip) {
+  return list.filter(([p]) =>
+    (skip === "type" || FS.type === "*" || TYPES.find(t => t[0] === FS.type)[2](p)) &&
+    (skip === "brand" || FS.brand === "*" || p.brand === FS.brand) &&
+    (skip === "alt" || FS.alt === "*" || ALTS.find(t => t[0] === FS.alt)[2](p)) &&
+    [...FS.feats].every(f => FEATS.find(x => x[0] === f)[1](p)));
+}
+function drawCat() {
+  const base = catBase(FS.key), list = applyF(base);
+  const byT = applyF(base, "type"), byB = applyF(base, "brand"), byA = applyF(base, "alt");
+  const tOpts = TYPES.map(([k,t,fn]) => [k, t, byT.filter(([p]) => fn(p)).length]).filter(x => x[2] || x[0] === FS.type);
+  document.getElementById("f-type").innerHTML = [["*", "Todo", byT.length], ...tOpts].map(([k,t,n]) =>
+    `<button type="button" class="bchip${FS.type === k ? " on" : ""}" data-k="${k}" aria-pressed="${FS.type === k}">${t} <small>${n}</small></button>`).join("");
+  const brands = [...new Set(byB.map(([p]) => p.brand))];
+  if (FS.brand !== "*" && !brands.includes(FS.brand)) brands.push(FS.brand);
+  document.getElementById("f-brand").innerHTML = `<option value="*">Todas las marcas</option>` + brands.map(b => `<option value="${b}"${FS.brand === b ? " selected" : ""}>${b} (${byB.filter(([p]) => p.brand === b).length})</option>`).join("");
+  document.getElementById("f-alt").innerHTML = `<option value="*">Cualquier altura</option>` + ALTS.map(([k,t,fn]) => { const n = byA.filter(([p]) => fn(p)).length; return n || FS.alt === k ? `<option value="${k}"${FS.alt === k ? " selected" : ""}>${t} (${n})</option>` : ""; }).join("");
+  document.getElementById("f-feat").innerHTML = FEATS.map(([t,fn]) => {
+    const on = FS.feats.has(t), n = (on ? list : list).filter(([p]) => fn(p)).length;
+    return n || on ? `<button type="button" class="bchip fchip${on ? " on" : ""}" data-f="${t}" aria-pressed="${on}">${on ? "✓ " : ""}${t} <small>${n}</small></button>` : "";
+  }).join("");
+  document.getElementById("f-fnum").textContent = FS.feats.size ? FS.feats.size + (FS.feats.size === 1 ? " marcada" : " marcadas") : "";
+  const active = FS.type !== "*" || FS.brand !== "*" || FS.alt !== "*" || FS.feats.size;
+  document.getElementById("f-count").textContent = active ? `Mostrando ${plural(list.length)} de ${base.length}` : `${plural(base.length)}`;
+  document.getElementById("f-clear").hidden = !active;
+  document.getElementById("c-list").innerHTML = list.length
+    ? `<div class="grid">${list.map(([p,i]) => card(p, i)).join("")}</div>`
+    : `<div class="fempty"><p>No hay modelos con estos filtros.</p><button type="button" class="btn btn-red" id="f-clear2">Quitar filtros</button></div>`;
   wireWA(document.getElementById("c-list"));
 }
+function renderCat(key) {
+  const v = VIEWS[key];
+  FS = {key, type:"*", brand:"*", alt:"*", feats:new Set()};
+  const n = catBase(key).length;
+  document.getElementById("c-crumbs").innerHTML = `<a href="#inicio">Inicio</a> › ${v.title}`;
+  document.getElementById("c-title").innerHTML = `${v.title} <small>${n ? plural(n) : ""}</small>`;
+  document.getElementById("c-intro").textContent = v.intro;
+  document.getElementById("bfilter").hidden = true;
+  document.getElementById("cfil").hidden = !n;
+  if (!n) { document.getElementById("c-list").innerHTML = `<p class="empty">${v.empty}</p>`; return; }
+  document.getElementById("f-det").open = matchMedia("(min-width:601px)").matches;
+  drawCat();
+}
+document.getElementById("cfil").addEventListener("click", e => {
+  const t = e.target.closest("#f-type .bchip"), f = e.target.closest("#f-feat .bchip"), c = e.target.closest("#f-clear");
+  if (t) FS.type = t.dataset.k;
+  else if (f) { const k = f.dataset.f; FS.feats.has(k) ? FS.feats.delete(k) : FS.feats.add(k); }
+  else if (c) { FS.type = "*"; FS.brand = "*"; FS.alt = "*"; FS.feats.clear(); }
+  else return;
+  drawCat();
+});
+document.getElementById("cfil").addEventListener("change", e => {
+  if (e.target.id === "f-brand") FS.brand = e.target.value;
+  if (e.target.id === "f-alt") FS.alt = e.target.value;
+  drawCat();
+});
+document.getElementById("c-list").addEventListener("click", e => {
+  if (e.target.id !== "f-clear2") return;
+  FS.type = "*"; FS.brand = "*"; FS.alt = "*"; FS.feats.clear(); drawCat();
+});
 function renderBrand(name) {
   const list = PRODUCTS.map((p,i) => [p,i]).filter(([p]) => p.brand === name);
   const lines = [...new Set(list.map(([p]) => p.line).filter(Boolean))];
@@ -838,6 +951,7 @@ function renderBrand(name) {
   const groups = [["senora","Señora"],["caballero","Caballero"],["unisex","Unisex"]].map(([k,t]) => [k, t, list.filter(([p]) => p.who === k)]).filter(g => g[2].length);
   document.getElementById("c-list").innerHTML = groups.map(([k,t,items]) =>
     `<div class="bgroup" data-brand="${k}"><h2 class="bhead">${t} <small>${items.length === 1 ? "1 modelo" : items.length + " modelos"}</small></h2><div class="grid">${items.map(([p,i]) => card(p, i)).join("")}</div></div>`).join("");
+  document.getElementById("cfil").hidden = true;
   const bf = document.getElementById("bfilter");
   bf.hidden = groups.length < 2;
   bf.innerHTML = [["*","Todo"], ...groups.map(([k,t]) => [k,t])].map(([k,t],i) => `<button type="button" class="bchip${i===0?" on":""}" data-brand="${k}" aria-pressed="${i===0}">${t}</button>`).join("");
